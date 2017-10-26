@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Out-2017 às 19:53
+-- Generation Time: 26-Out-2017 às 20:32
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -45,7 +45,8 @@ CREATE TABLE `usuario` (
   `ultimo_nome` varchar(15) NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` varchar(10) NOT NULL,
-  `id` tinyint(4) NOT NULL
+  `id` tinyint(4) NOT NULL,
+  `foto` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,15 +58,15 @@ CREATE TABLE `usuario` (
 CREATE TABLE `vinho` (
   `rotulo` blob NOT NULL,
   `tipo_uva` enum('Cabernet Sauvignon','Merlot','Malbec','Carménère','Pinot Noir','Syrah','Tannat','Tempranillo','Chardonnay','Sauvignon Blanc','Blend') DEFAULT 'Cabernet Sauvignon',
-  `tipo_vinho` enum('Tinto','Branco','Rosé') NOT NULL DEFAULT 'Tinto',
   `pais` varchar(20) DEFAULT NULL,
   `vinicola` varchar(30) DEFAULT NULL,
   `preco` decimal(10,0) DEFAULT NULL,
   `regiao` varchar(20) DEFAULT NULL,
   `estilo` varchar(20) DEFAULT NULL,
-  `nome` varchar(50) NOT NULL,
   `comidas` varchar(40) DEFAULT NULL,
-  `email_usuario` varchar(40) NOT NULL
+  `email_usuario` varchar(40) NOT NULL,
+  `tipo_vinho` enum('Tinto','Branco','Rosé','Porto','Espumante','Sobremesa') NOT NULL DEFAULT 'Tinto',
+  `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
