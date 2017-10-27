@@ -8,6 +8,7 @@
 
 .espacamento-interno-menu {
 	padding: 10px;
+	width: 100%;
 }
 
 a {
@@ -21,8 +22,21 @@ a {
 	padding: 20px;
 	margin: auto;
 	color: gray;
+	margin-top: 330px;
+	margin-left: 110px;
+	position: absolute;
+
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
 }
 
-.centralizacao-consulta {
+
+.consulta-container {
 	margin: auto;
+}
+
+.rodape {
+	margin: auto;
+	position: absolute;
 }

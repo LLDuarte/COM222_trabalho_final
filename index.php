@@ -3,22 +3,22 @@
 
 <head>
 	<title>Vovoni - Bem vindo!</title>
-	<!-- Required meta tags -->
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="_css/estilo.css">
-	<script type="text/javascript">
-		var slider = new Slider('#ex2', {});
-	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<div class="row espacamento-interno-menu">
 		<div class="col-8 separador">
-			<a href="index.php"><img src="_images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px; margin-left: 10px"></a>
+			<a href="index.php"><img src="_images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px;"></a>
 		</div>
 		<div class="col-4">
 			<ul class="nav">
@@ -37,11 +37,10 @@
 			</ul>
 		</div>
 	</div>
-	<img src="_images/bg-inicial.jpg" class="img-fluid img-mouseon" alt="Responsive image" style="width: 100%">
 
-	<div class="container">
-		<div class="row div-consulta">
-			<div class="col-2 separador">
+	<div class="container div-consulta">
+		<div class="row">
+			<div class="col-2 separador consulta-container">
 				<div class="dropdown show">
 					<a class="btn btn-secondary dropdown-toggle centralizacao-consulta" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Tinto
@@ -69,10 +68,7 @@
 		</div>
 	</div>
 
-	
+	<div style="float: left;"><img src="_images/bg-inicial.jpg" class="img-fluid" alt="Responsive image" style="width: 100%"></div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>
