@@ -30,7 +30,7 @@
 					<a class="nav-link" href="index.php">Explorar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cadastro.php">Cadastrar</a>
+					<a class="nav-link" href="#">Cadastrar</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Entrar</a>
@@ -38,42 +38,6 @@
 			</ul>
 		</div>
 	</div>
-
-
-	<div class="container div-consulta">
-		<div class="row">
-
-			<div class="col-2 separador consulta-container">
-				<center><div class="dropdown show">
-					<a class="btn btn-secondary dropdown-toggle consulta-container" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Tinto
-					</a>
-
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						<a class="dropdown-item" href="#">Branco</a>
-						<a class="dropdown-item" href="#">Rosé</a>
-						<a class="dropdown-item" href="#">Vinho do Porto</a>
-						<a class="dropdown-item" href="#">Espumante</a>
-						<a class="dropdown-item" href="#">Vinho de Sobremesa</a>
-					</div>
-				</div></center>
-			</div>
-
-			<div class="col-4 separador">
-				<center><small>Intervalo de preços:</small><br> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/></center>
-			</div>
-
-			<div class="col-4 separador">
-				<center><small>Intervalo de avaliações:</small><br> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/></center>
-			</div>
-
-			<div class="col-2 consulta-container">
-				<center><button type="button" class="btn btn-secondary">Mostrar vinhos</button></center>
-			</div>
-		</div>
-	</div>
-
-	<div style="float: left;"><img src="_images/bg-inicial.jpg" class="img-fluid" alt="Responsive image" style="width: 100%"></div>
 
 </body>
 </html>
