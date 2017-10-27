@@ -1,0 +1,28 @@
+.separador {
+	border-right: 1px lightgray;
+	border-style: solid;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+}
+
+.espacamento-interno-menu {
+	padding: 10px;
+}
+
+a {
+	font-weight: bold;
+	color: darkgray;
+}
+
+
+.div-consulta {
+	background-color: white;
+	padding: 20px;
+	margin: auto;
+	color: gray;
+}
+
+.centralizacao-consulta {
+	margin: auto;
+}
