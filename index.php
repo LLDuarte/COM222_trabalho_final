@@ -60,11 +60,11 @@
 			</div>
 
 			<div class="col-4 separador">
-				<center><small>Intervalo de preços:</small><br> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/></center>
+				<center><small>Intervalo de preços:</small> <br><small>Até R$<input type="text" id="display" value="0" class="label-slider" readonly> </small><br> <input type="range" name="vol" value="0" min="0" max="1300" oninput="display.value=value" onchange="display.value=value"></center>
 			</div>
 
 			<div class="col-4 separador">
-				<center><small>Intervalo de avaliações:</small><br> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/></center>
+				<center><small>Intervalo de avaliações:</small> <br><input type="text" id="display2" value="0" class="label-slider2" readonly> <small> estrelas</small><br> <input type="range" name="vol" value="0" min="0" max="5" oninput="display2.value=value" onchange="display2.value=value"> </center>
 			</div>
 
 			<div class="col-2 consulta-container">
