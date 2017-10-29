@@ -44,10 +44,13 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" action="cadastro_user/cadastra_user">
+				<form class="form-horizontal" method="POST">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Entre para a comunidade!</h1>
 					
+					<?php if(!empty($erro)): ?>
+						<div class="alert alert-danger"><?php echo $erro; ?></div>
+					<?php endif; ?>
 					
 					<!-- Text input-->
 					<div class="form-group">

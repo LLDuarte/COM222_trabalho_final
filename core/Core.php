@@ -54,7 +54,6 @@
 
 			//o metodo que eu vou utilizar está na variavel currentAction
 			call_user_func_array(array($c, $currentAction), $params);
-
 		}	
 	}
 	?>

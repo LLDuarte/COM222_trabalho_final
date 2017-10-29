@@ -7,14 +7,7 @@ class homeController extends controller{
 	
 	public function  index(){
 
-		$anuncios = new Anuncios();
-		$usuario = new Usuarios();
-
-		//dados que eu desejo enviar para a view
-		$dados = array(
-			'quantidade' => $anuncios->getQtd(),
-			'nome' => $usuario->getNome()
-		);
+		$dados = array();
 
 		$this->loadTemplate('home', $dados);
 

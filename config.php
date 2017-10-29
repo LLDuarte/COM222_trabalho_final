@@ -9,14 +9,14 @@ $config = array();
 	//conexão local
 if(ENVIRONMENT == "development"){
 	define("BASE_URL", "http://localhost/COM222_trabalho_final/");
-	$config['dbname'] = 'estrutura_mvc';
+	$config['dbname'] = 'vovoni';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 }else{
 	//caso tenha um servidor
 	define("BASE_URL", "http:www.meusite.com.br/");
-	$config['dbname'] = 'estrutura_mvc';
+	$config['dbname'] = 'vovoni';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
