@@ -1,3 +1,6 @@
+/*
+* Menu
+*/
 .separador {
 	border-right: 1px lightgray;
 	border-style: solid;
@@ -8,7 +11,9 @@
 
 .espacamento-interno-menu {
 	padding: 10px;
-	width: 100%;
+	width: 101%;
+	margin: none;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
 }
 
 a {
@@ -16,26 +21,105 @@ a {
 	color: darkgray;
 }
 
+a:hover {
+	color: #430C0C;
+	transition: .8s;
+}
+
+/*
+* Home, sliders...
+*/
+.label-slider {
+	border: black;
+	width: 30px;
+	margin: none;
+	font-weight: bold;
+	color: gray;
+}
+
+.label-slider2 {
+	border: black;
+	width: 15px;
+	margin: none;
+	font-weight: bold;
+	color: gray;
+}
+
+
+.div-consulta {
+	background-color: white;
+	padding: 20px;
+	margin: auto;
+	color: gray;
+	margin-top: 330px;
+	margin-left: 110px;
+	position: absolute;
+
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+
+.consulta-container {
+	margin: auto;
+}
+
+.borda-teste {
+	border: 1px solid black;
+}
+
+.cor {
+	background-color: red;
+}
+
+/*cadastro_user*/
+.div-cadastro {
+	margin-top: 20px;
+	margin-bottom: 70px;
+	padding: 20px 70px 20px 70px;
+	color: gray;
+	width: 40%;
+	white-space: normal;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+}
+
+.fundo-botao {
+	background-color: #430C0C;
+	border: 1px solid #430C0C;
+}
+
+.fundo-botao:hover {
+	background-color: #430C0C;
+	border: 1px solid #430C0C;
+	opacity: .8;
+	transition: .8s;
+}
+
 html, body {
 	height: 100%;
 	min-height: 100%;
 }
 
+/*
+* my_wines
+*/
 .tudo{
 	position: relative;
 	min-height: 100%;
 }
 
+.normal {position:relative;}
+.estavel {position: fixed;top:0;}
+
 .fundo{
-	background-image: linear-gradient( to bottom, #FFDEAD 40%, #FFFFF0 25%); 
-	height: 1000px;
+	background-image: linear-gradient( to bottom, #430c0c 40%, #FFFFF0 25%); 
+	height: 100%;
+	margin-bottom: 12%;
 	overflow:hidden;
 }
 
 .botao{
-	margin-top: 13%;
-	margin-left: 38%;
-	margin-right: 47%;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.1) inset;
@@ -72,11 +156,14 @@ html, body {
 	width: 130px;
 }
 
+/*
+* Rodape
+*/
 .footer-bottom {
-	background-color: #FFDEAD;
+	background-color: #430c0c;
 	min-height: 30px;
 	width: 100%;
-	position:absolute;
+	margin-top: 50%;
 	bottom:0;
 
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
