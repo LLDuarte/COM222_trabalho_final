@@ -25,16 +25,16 @@
 		<div class="col-4">
 			<ul class="nav">
 				<li class="nav-item">
-					<a class="nav-link active" href="home" style="font-weight: bold;">Home</a>
+					<a class="nav-link active" href="../home" style="font-weight: bold;">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="my_wines">Explorar</a>
+					<a class="nav-link" href="../my_wines">Explorar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cadastro_user">Cadastrar</a>
+					<a class="nav-link" href="../cadastro_user">Cadastrar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Entrar</a>
+					<a class="nav-link" href="../login">Login</a>
 				</li>
 			</ul>
 		</div>
@@ -56,7 +56,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idNome">Nome</label>  
 						<div class="col-md-12">
-							<input id="idNome" name="nome" type="text" placeholder="Digite o nome" class="form-control input-md" required="">
+							<input id="idNome" name="nome" type="text" placeholder="Digite o nome" class="form-control input-md" required="" value="<?php echo $nome;?>">
 
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idSobrenome">Sobrenome</label>  
 						<div class="col-md-12">
-							<input id="idSobrenome" name="sobrenome" type="text" placeholder="Digite o sobrenome" class="form-control input-md" required="">
+							<input id="idSobrenome" name="sobrenome" type="text" placeholder="Digite o sobrenome" class="form-control input-md" required="" value="<?php echo $sobrenome;?>">
 
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idEmail">Email</label>
 						<div class="col-md-12">
-							<input id="idEmail" name="email" type="text" placeholder="Digite o email" class="form-control input-md" required="">
+							<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
 
 						</div>
 					</div>
@@ -82,7 +82,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idSenha">Senha</label>
 						<div class="col-md-12">
-							<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
+							<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="" value="<?php echo $senha;?>">
 
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 					<div class="form-group">
 						<label class="col-md-6 control-label" for="idFoto">Foto (opcional)</label>
 						<div class="col-md-12">
-							<input id="idFoto" name="foto" type="file" placeholder="Digite o telefone" class="form-control input-md" required="">
+							<input id="idFoto" name="foto" type="file" placeholder="Digite o telefone" class="form-control input-md">
 
 						</div>
 					</div>

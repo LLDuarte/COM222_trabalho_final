@@ -40,71 +40,28 @@
 		</div>
 	</div>
 
-	<div class="container div-cadastro ">
-		<div class="row">
-			<div class="col">
-				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" action="cadastro_user/cadastraUsuario">
-					<!-- Form Name -->
-					<h1 class="welcome text-center">Entre para a comunidade!</h1>
-					
-					
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idNome">Nome</label>  
-						<div class="col-md-12">
-							<input id="idNome" name="nome" type="text" placeholder="Digite o nome" class="form-control input-md" required="">
 
-						</div>
-					</div>
+	<div class="container">
+		<h1>Login</h1>
 
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idSobrenome">Sobrenome</label>  
-						<div class="col-md-12">
-							<input id="idSobrenome" name="sobrenome" type="text" placeholder="Digite o sobrenome" class="form-control input-md" required="">
-
-						</div>
-					</div>
-
-					<!-- Password input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idEmail">Email</label>
-						<div class="col-md-12">
-							<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
-
-						</div>
-					</div>
-					<!-- Password input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idSenha">Senha</label>
-						<div class="col-md-12">
-							<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
-
-						</div>
-					</div>
-					<!-- Password input-->
-					<div class="form-group">
-						<label class="col-md-6 control-label" for="idFoto">Foto (opcional)</label>
-						<div class="col-md-12">
-							<input id="idFoto" name="foto" type="file" placeholder="Digite o telefone" class="form-control input-md">
-
-						</div>
-					</div>
-
-					<!-- Button (Double) -->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idConfirmar"></label>
-						<div class="col-md-8">
-							<input type="submit" class="btn btn-secondary" value="Confirmar">				   
-						</div>
-					</div>
+		<form method="POST" action="login/entrar">
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idEmail">Email</label>  
+				<div class="col-md-12">
+					<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
 
 				</div>
-			</form>
-		</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idSenha">Senha</label>  
+				<div class="col-md-12">
+					<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
+
+				</div>
+			</div>
+			<button type="submit" class="btn btn-secondary">Entrar</button>
+		</form>
 	</div>
-	
 	<div class="footer-bottom fixed-bottom">
 		<div class="container">
 			<footer class="footer">

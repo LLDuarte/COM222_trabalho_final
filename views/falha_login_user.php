@@ -25,23 +25,47 @@
 		<div class="col-4">
 			<ul class="nav">
 				<li class="nav-item">
-					<a class="nav-link active" href="home" style="font-weight: bold;">Home</a>
+					<a class="nav-link active" href="../home" style="font-weight: bold;">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="my_wines">Explorar</a>
+					<a class="nav-link" href="../my_wines">Explorar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cadastro_user">Cadastrar</a>
+					<a class="nav-link" href="../cadastro_user">Cadastrar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="login">Login</a>
+					<a class="nav-link" href="../login">Login</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 
-	<?php $this->loadViewInTemplate($viewName, $viewData); ?>
-	
+
+	<div class="container">
+		<h1>Login</h1>
+
+		<?php if(!empty($erro)): ?>
+			<div class="alert alert-danger"><?php echo $erro; ?></div>
+		<?php endif; ?>
+
+		<form method="POST" action="login/entrar">
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idEmail">Email</label>  
+				<div class="col-md-12">
+					<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idSenha">Senha</label>  
+				<div class="col-md-12">
+					<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
+
+				</div>
+			</div>
+			<button type="submit" class="btn btn-secondary">Entrar</button>
+		</form>
+	</div>
 	<div class="footer-bottom fixed-bottom">
 		<div class="container">
 			<footer class="footer">
