@@ -8,7 +8,11 @@ class homeController extends controller{
 	public function __construct(){
 	
 		$usuario = new Usuarios();
+<<<<<<< HEAD
 		//$usuario->verificarLogin();
+=======
+		$usuario->verificarLogin();
+>>>>>>> d5d582aa946ba91aba3bf37e7875815aedcd261d
 	}
 	
 	public function  index(){
@@ -19,4 +23,8 @@ class homeController extends controller{
 
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d5d582aa946ba91aba3bf37e7875815aedcd261d
