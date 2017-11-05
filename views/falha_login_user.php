@@ -18,31 +18,54 @@
 </head>
 <body>
 	<!-- MENU -->
-	<!-- MENU -->
 	<nav class="navbar fixed-top navbar-expand-lg espacamento-interno-menu bg-light">
 		
-		<a class="navbar-brand" href="home"><img src="<?php echo BASE_URL;?>assets/images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px;"></a>
+		<a class="navbar-brand" href="../home"><img src="<?php echo BASE_URL;?>assets/images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px;"></a>
 		
 		<div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="my_wines">Explorar</a>
+					<a class="nav-link" href="../my_wines">Explorar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cadastro_user">Cadastrar</a>
+					<a class="nav-link" href="../cadastro_user">Cadastrar</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="login">Login</a>
+					<a class="nav-link" href="../login">Login</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<?php $this->loadViewInTemplate($viewName, $viewData); ?>
-	
+
+	<div class="container">
+		<h1>Login</h1>
+
+		<?php if(!empty($erro)): ?>
+			<div class="alert alert-danger"><?php echo $erro; ?></div>
+		<?php endif; ?>
+
+		<form method="POST" action="login/entrar">
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idEmail">Email</label>  
+				<div class="col-md-12">
+					<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="idSenha">Senha</label>  
+				<div class="col-md-12">
+					<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
+
+				</div>
+			</div>
+			<button type="submit" class="btn btn-secondary">Entrar</button>
+		</form>
+	</div>
 	<!-- Rodapé 
 	<div class="footer-bottom ">
 		<div class="container">

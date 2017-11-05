@@ -8,7 +8,7 @@ class cadastro_userController extends controller{
 		$this->loadView('cadastro_user', $dados);				
 	}
 
-	public function cadastra_user(){
+	public function cadastraUsuario(){
 		$dados = array('erro' => '');		
 
 		if(isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['email']) && isset($_POST['senha']) && !empty($_POST['nome']) && !empty($_POST['sobrenome']) && !empty($_POST['email']) && !empty($_POST['senha'])){
@@ -20,6 +20,10 @@ class cadastro_userController extends controller{
 
 				$usuario = new Usuarios();
 				$dados['erro'] = $usuario->cadastra_usuario($nome, $sobrenome, $email, $senha, $foto);
+				$dados['nome'] = $nome;
+				$dados['sobrenome'] = $sobrenome;
+				$dados['senha'] = $senha;
+
 		}
 
 		$this->loadView('falha_cadastra_user', $dados);
