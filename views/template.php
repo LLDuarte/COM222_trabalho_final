@@ -27,16 +27,35 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="my_wines">Explorar</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="cadastro_user">Cadastrar</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="login">Login</a>
-				</li>
+				</li>								
+				<?php 
+				if(!empty($viewData['usuario_nome'])){ 
+					?>
+					<li class="nav-item">
+						<a class="nav-link" href="my_wines">Explorar</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<?php echo $viewData['usuario_nome'];?>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?php echo BASE_URL;?>perfil">Editar Perfil</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="<?php echo BASE_URL;?>login/sair">Sair</a>			
+						</div>
+					</li>					
+					<?php
+				} else {
+					?>
+					<li class="nav-item">
+						<a class="nav-link" href="cadastro_user">Cadastrar</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login">Login</a>
+					</li>
+					<?php 
+				}
+				?>
 			</ul>
 		</div>
 	</nav>
@@ -55,7 +74,7 @@
 			</footer>
 		</div>
 	</div>
-	-->
+-->
 
 </body>
 </html>

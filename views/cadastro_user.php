@@ -26,10 +26,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="my_wines">Explorar</a>
-				</li>
+				</li>				
 				<li class="nav-item">
 					<a class="nav-link" href="cadastro_user">Cadastrar</a>
 				</li>
@@ -44,7 +41,7 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" action="cadastro_user/cadastraUsuario">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_user/cadastraUsuario">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Entre para a comunidade!</h1>
 					
@@ -87,8 +84,7 @@
 					<div class="form-group">
 						<label class="col-md-6 control-label" for="idFoto">Foto (opcional)</label>
 						<div class="col-md-12">
-							<input id="idFoto" name="foto" type="file" placeholder="Digite o telefone" class="form-control input-md">
-
+							<input id="idFoto" name="foto" type="file" class="form-control input-md">
 						</div>
 					</div>
 

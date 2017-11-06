@@ -24,7 +24,7 @@
 					<div class="col-sm-4 ml-sm-auto esquerda_foto">
 						<div class="row justify-content-center ">
 							<div class="fotoUser">
-								<img src="<?php echo BASE_URL;?>assets/images/user.jpg">
+								<img src="<?php echo BASE_URL.'assets/images/images_users/'.$foto;?>">
 							</div>
 						</div>
 					</div>

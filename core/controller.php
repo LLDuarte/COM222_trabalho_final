@@ -23,6 +23,15 @@ class controller{
 	public function loadViewInTemplate($viewName, $viewData = array()){
 
 		//transforma as chaves do array em uma variavel, permitindo acesso aos valores.
+		/*
+
+		$dados = array(
+			'nome' => 'Victor'
+		);
+		
+		nome passa a ser uma variavel, $nome
+
+		*/
 		extract($viewData);
 		require 'views/'.$viewName.'.php';
 	}

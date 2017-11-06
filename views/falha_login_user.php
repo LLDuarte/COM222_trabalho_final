@@ -28,9 +28,6 @@
 					<a class="nav-link" href="../home">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../my_wines">Explorar</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="../cadastro_user">Cadastrar</a>
 				</li>
 				<li class="nav-item">
@@ -48,7 +45,7 @@
 			<div class="alert alert-danger"><?php echo $erro; ?></div>
 		<?php endif; ?>
 
-		<form method="POST" action="login/entrar">
+		<form method="POST">
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="idEmail">Email</label>  
 				<div class="col-md-12">

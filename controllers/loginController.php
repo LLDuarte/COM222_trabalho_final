@@ -19,14 +19,10 @@ class loginController extends controller{
 
 	public function entrar(){
 
-		echo md5($_POST['senha']);
-		echo " ";
-		echo $_POST['email'];
-
 		$dados = array('erro' => '');		
 
 		if(isset($_POST['senha']) && isset($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['email'])){
-				$email = addslashes($_POST['email']);
+			$email = addslashes($_POST['email']);
 				$senha = md5($_POST['senha']); //proteção
 
 				$usuario = new Usuarios();
@@ -35,6 +31,16 @@ class loginController extends controller{
 
 			$this->loadView('falha_login_user', $dados);
 
+
 		}
 
+	public function sair(){
+		unset($_SESSION['login']);
+		header("Location: ".BASE_URL);
+
 	}
+}
+
+
+
+
