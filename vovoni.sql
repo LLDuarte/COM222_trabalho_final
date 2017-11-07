@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Out-2017 às 20:32
+-- Generation Time: 30-Out-2017 às 01:50
 -- Versão do servidor: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -41,13 +41,26 @@ CREATE TABLE `my_wines` (
 --
 
 CREATE TABLE `usuario` (
-  `primeiro_nome` varchar(15) NOT NULL,
-  `ultimo_nome` varchar(15) NOT NULL,
+  `nome` varchar(15) NOT NULL,
+  `sobrenome` varchar(15) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL,
   `id` tinyint(4) NOT NULL,
   `foto` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`nome`, `sobrenome`, `email`, `senha`, `id`, `foto`) VALUES
+('cs', 'cs', 'cs', '95cc64dd28', 1, 0x31333735343632325f313131343535303836383630363233305f383534303831373039383433373836313237305f6e2e6a7067),
+('Victor ', 'Rodrigues', 'vitor1908@gmail.com', '202cb962ac', 17, 0x757365722e6a7067),
+('da', 'da', 'carlos@gmail.com', '202cb962ac', 18, ''),
+('Leandro', 'Duarte', 'l@gmail.com', '202cb962ac', 19, ''),
+('Isabela', 'Munis', 'isabela@gmail.com', 'caf1a3dfb5', 20, ''),
+('sa', 'sa', 'as@l.com', '40bd001563', 21, ''),
+('Salvador', 'Dali', 'd@gmail.com', '202cb962ac59075b964b07152d234b70', 22, '');
 
 -- --------------------------------------------------------
 
@@ -77,8 +90,7 @@ CREATE TABLE `vinho` (
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `vinho`
@@ -94,7 +106,7 @@ ALTER TABLE `vinho`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

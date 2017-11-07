@@ -1,0 +1,274 @@
+/*
+* Menu
+*/
+.separador {
+	border-right: 1px lightgray;
+	border-style: solid;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+}
+
+.espacamento-interno-menu {
+	padding: 10px;
+	padding-right: 50px;
+	margin: none;	
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+}
+
+a {
+	font-weight: bold;
+	color: darkgray;
+}
+
+a:hover {
+	color: #430C0C;
+	transition: .8s;
+}
+
+/*
+* Home, sliders...
+*/
+.label-slider {
+	border: black;
+	width: 30px;
+	margin: none;
+	font-weight: bold;
+	color: gray;
+}
+
+.label-slider2 {
+	border: black;
+	width: 15px;
+	margin: none;
+	font-weight: bold;
+	color: gray;
+}
+
+
+.div-consulta {
+	background-color: white;
+	padding: 20px;
+	margin: auto;
+	color: gray;
+	margin-top: 400px;
+	margin-left: 110px;
+	position: absolute;
+
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+
+.consulta-container {
+	margin: auto;
+}
+
+.borda-teste {
+	border: 1px solid black;
+}
+
+.cor {
+	background-color: red;
+}
+
+/*cadastro_user*/
+.div-cadastro {
+	margin-top: 100px;
+	margin-bottom: 70px;
+	padding: 20px 70px 20px 70px;
+	color: gray;
+	width: 40%;
+	white-space: normal;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+}
+
+.fundo-botao {
+	background-color: #430C0C;
+	border: 1px solid #430C0C;
+}
+
+.fundo-botao:hover {
+	background-color: #430C0C;
+	border: 1px solid #430C0C;
+	opacity: .8;
+	transition: .8s;
+}
+
+/*
+* my_wines
+*/
+.tudo{
+	position: relative;
+	min-height: 100%;
+}
+
+.normal {position:relative;}
+.estavel {position: fixed;top:0;}
+
+.fundo{
+	background-image: linear-gradient( to bottom, #430c0c 40%, #FFFFF0 25%); 
+	height: 100%;
+	margin-bottom: 12%;
+	overflow:hidden;
+}
+
+.botao{
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.esquerda_foto{
+	background-color: #FFFFF0;
+	height: 350px;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 15px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+}
+
+.direita_vinhos{
+	background-color: #FFFFF0;
+	height: 650px;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.sobreposta{
+	margin-top: 180px;
+}
+
+.fotoUser img{
+	border-radius: 50%;
+	border: 5px solid #FFFFF0;
+	display: inline-block;
+	margin-top: -50px;
+	height: 130px;
+	overflow: hidden;
+	width: 130px;
+}
+
+/*
+wines
+*/
+.div-wines{
+	margin-top: 100px;
+}
+
+.filterarea {
+	border: 2px solid #ececec;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.widget {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.widget h1 {
+	border-bottom:1px solid #E0E0E0;
+	padding-bottom:15px;
+}
+h1 {
+	font-size:24px;
+	margin-top:0;
+	margin-left:0;
+	padding-left:0;
+}
+.product_item {
+	padding:10px;
+	border-radius: 4px;
+
+}
+.product_item:hover {
+	box-shadow: 0 0 15px 0 rgba(50,50,50,0.3);
+}
+.product_item a {
+	text-decoration: none;
+	display:block;
+}
+.product_name {
+	font-weight:bold;
+	color:#0000FF;
+}
+.product_brand {
+	color:#000;
+	font-size:11px;
+}
+.product_price_from {
+	float:left;
+	color:#CCC;
+	font-size:12px;
+	margin-top:15px;
+}
+.product_price {
+	float:right;
+	color:#000;
+	font-weight: bold;
+	margin-top:15px;
+}
+
+.paginationItem{
+	width: 40px;
+	height: 40px;
+	
+	font-size: 13px;
+	text-align: center;
+	line-height: 40px;
+	display: inline-block;
+}
+
+.paginationItem:hover, .pag_active{
+	box-shadow: 0 0 15px 0 rgba(50,50,50,0.3);
+}
+.paginationItem a{
+	display: block;
+	text-decoration: none;
+}
+
+/*
+* Rodape
+*/
+
+.footer-bottom {
+	background-color: #430c0c;
+	min-height: 30px;
+	width: 100%;
+	margin-top: 50%;
+	bottom:0;
+
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.copyright {
+	color: #696969;
+	line-height: 30px;
+	min-height: 30px;
+	padding: 7px 0;
+}
+.design {
+	color: #696969;
+	line-height: 30px;
+	min-height: 30px;
+	padding: 7px 0;
+	text-align: right;
+}
+.design a {
+	color: #696969;
+}
+
+.div-rodape {
+	text-align: center;
+	font-size: 12px;
+	color: darkgray;
+	padding: 10px 0px 10px 0px;
+}
+
+.div-rodape:hover {
+	color: black;
+	transition: .8s;
+}
