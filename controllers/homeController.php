@@ -21,7 +21,7 @@ class homeController extends controller{
 
 		$usuario = new Usuarios();
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
-
+		$dados['maxslider'] = 500;
 		$this->loadTemplate('home', $dados);
 
 	}

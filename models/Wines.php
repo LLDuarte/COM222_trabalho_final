@@ -2,12 +2,22 @@
 
 class Wines extends model{
 	
-	public function getList($inicio = 0, $limit = 3){
+	public function getList($inicio = 0, $limit = 3, $filters = array()){
 
 		$array = array();
 
-		$sql = $this->db->prepare("SELECT nome, preco, regiao, rotulo, tipo_vinho FROM vinho LIMIT 
-			$inicio, $limit");
+		$where = array(
+			'1=1'
+		);
+
+
+		$consulta = "SELECT 
+						nome, preco, regiao, rotulo, tipo_vinho 
+					FROM vinho
+					WHERE ".implode(' AND ', $where)."	
+					LIMIT 
+						$inicio, $limit";
+		$sql = $this->db->prepare($consulta);
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
@@ -42,12 +52,21 @@ class Wines extends model{
 		return $array;
 	}
 
-	public function getTotal(){
+	public function getTotal($filters = array()){
 
-		$sql = "SELECT count(*) as c from vinho";
+		$where = array(
+			'1=1'
+		);
 
-		$sql = $this->db->query($sql);
+		$sql = "SELECT 
+					count(*) as c 
+				from 
+					vinho
+				WHERE ".implode(' AND ', $where)."" ;
+
+		$sql = $this->db->prepare($sql);
 		
+		$sql->execute();
 		$resultado = $sql->fetch();
 
 		return $resultado['c'];		

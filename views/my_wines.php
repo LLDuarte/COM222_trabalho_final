@@ -1,21 +1,3 @@
-<script type="text/javascript">
-	$(function () {
-		var navigations = $('#menu'),
-		pos = navigations.offset();
-		$(window).scroll(function () {
-			if ($(this).scrollTop() > pos.top + navigations.height() && navigations.hasClass('normal')) {
-				navigations.fadeOut('fast', function () {
-					$(this).removeClass('normal').addClass('estavel').fadeIn('fast')
-				})
-			} else if ($(this).scrollTop() <= pos.top + navigations.height() && navigations.hasClass('estavel')) {
-				navigations.fadeOut('fast', function () {
-					$(this).removeClass('estavel').addClass('normal').fadeIn('fast')
-				})
-			}
-		})
-	});
-</script>
-
 <div class="tudo">
 	<div class="container-fluid fundo">
 		<div class="row">
@@ -32,7 +14,7 @@
 						<div id="menu" class="normal botao">
 							<ul class="nav nav-tabs">								
 								<li class="nav-item">
-									<a class="nav-link" href="#">CADASTRAR VINHO</a>
+									<a class="nav-link" href="cadastroVinho">CADASTRAR VINHO</a>
 								</li>
 								
 							</ul>
