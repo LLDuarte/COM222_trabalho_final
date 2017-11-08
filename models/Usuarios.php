@@ -104,6 +104,20 @@ class Usuarios extends model{
 		}
 	}
 
+	public function getEmail($id){
+		$sql = $this->db->prepare("SELECT email FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetch();
+			return $resultado['email'];
+		}else{
+			return '';
+		}
+	}
+
 	public function getFoto($id){
 		$sql = $this->db->prepare("SELECT foto FROM usuario WHERE id = :id");
 		$sql->bindValue(":id", $id);

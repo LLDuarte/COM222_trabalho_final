@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Vovoni - Bem vindo!</title>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
@@ -30,7 +32,7 @@
 				if(!empty($viewData['usuario_nome'])){ 
 					?>
 					<li class="nav-item">
-						<a class="nav-link" href="my_wines">Explorar</a>
+						<a class="nav-link" href="<?php echo BASE_URL; ?>my_wines">Explorar</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,7 +71,7 @@
 	
 	<!-- JS -->
 	<script type="text/javascript">
-		var maxslider = <?php echo $viewData['maxslider']; ?>;
+		var maxslider = <?php echo $viewData['filters']['maxslider']; ?>;
 	</script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

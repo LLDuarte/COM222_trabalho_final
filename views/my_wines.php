@@ -7,16 +7,29 @@
 						<div class="row justify-content-center ">
 							<div class="fotoUser">
 								<img src="<?php echo BASE_URL.'assets/images/images_users/'.$foto;?>">
-							</div>
+							</div>							
+						</div>
+						<br>
+						<div class="row justify-content-center">
+							<h1><?php echo $usuario_nome;?></h1>
+						</div>
+						<div class="row justify-content-center">
+							
+							<h1>Avaliações: </h1>
 						</div>
 					</div>
 					<div class="col-sm-7 mr-sm-auto direita_vinhos">						
-						<div id="menu" class="normal botao">
-							<ul class="nav nav-tabs">								
+						<div id="menu" class="normal botao menu-wines">
+							<ul class="nav">								
 								<li class="nav-item">
-									<a class="nav-link" href="cadastroVinho">CADASTRAR VINHO</a>
+									<a class="nav-link" href="cadastro_vinho">Cadastrar Vinho</a>
 								</li>
-								
+								<li class="nav-item">
+									<a class="nav-link" href="cadastroVinho">Top 30 Avaliações</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="cadastroVinho">Últimas Avaliações</a>
+								</li>								
 							</ul>
 						</div>
 						

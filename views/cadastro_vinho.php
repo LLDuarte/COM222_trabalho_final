@@ -3,6 +3,8 @@
 <head>
 	<title>Vovoni - Bem vindo!</title>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
@@ -57,19 +59,19 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_user/cadastraUsuario">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_vinho/insereVinho">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Cadastre um novo vinho!</h1>
 
 					<div class="form-group">
 						<label for="inputNome">Nome</label>
-						<input type="text" class="form-control" id="inputAddress" placeholder="Nome do vinho..." required>
+						<input type="text" name="nome" class="form-control" id="inputAddress" placeholder="Nome do vinho..." required>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="inputTipoVinho">Tipo do Vinho</label>
-							<select id="inputState" class="form-control">
+							<select id="inputState" name="tipoVinho" class="form-control">
 								<option selected>Tinto</option>
 								<option>Branco</option>
 								<option>Rosé</option>
@@ -80,7 +82,7 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputTipoUva">Tipo da Uva</label>
-							<select id="inputState" class="form-control">
+							<select id="inputState" name="tipoUva" class="form-control">
 								<option selected>Cabernet Sauvignon</option>
 								<option>Merlot</option>
 								<option>Malbec</option>
@@ -98,39 +100,39 @@
 
 					<div class="form-group">
 						<label for="inputAcompanhamentos">Acompanhamentos</label>
-						<input type="text" class="form-control" id="inputAddress" placeholder="Peixes, carnes, queijos..." required>
+						<input type="text" name="acompanhamento" class="form-control" id="inputAddress" placeholder="Peixes, carnes, queijos..." required>
 					</div>
 
 
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">Vinícola</label>
-							<input type="text" class="form-control" id="inputEmail4" placeholder="Vinicola..." required>
+							<input type="text" name="vinicola" class="form-control" id="inputEmail4" placeholder="Vinicola..." required>
 						</div>
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">Região</label>
-							<input type="text" class="form-control" id="inputEmail4" placeholder="Sardenha..." required>
+							<input type="text" name="regiao" class="form-control" id="inputEmail4" placeholder="Sardenha..." required>
 						</div>
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">País</label>
-							<input type="text" class="form-control" id="inputEmail4" placeholder="Itália, Brasil..." required>
+							<input type="text" name="pais" class="form-control" id="inputEmail4" placeholder="Itália, Brasil..." required>
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="inputVinicola">Estilo do Vinho</label>
-							<input type="text" class="form-control" id="inputEmail4" placeholder="Estilo..." required>
+							<input type="text" name="estilo" class="form-control" id="inputEmail4" placeholder="Estilo..." required>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputVinicola">Preço</label>
-							<input type="text" class="form-control" id="inputEmail4" placeholder="Apenas números..." required>
+							<input type="text" name="preco" class="form-control" id="inputEmail4" placeholder="Apenas números..." required>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-md-12 control-label" for="idFoto">Foto do Rótulo</label>
-						<input id="idFoto" name="foto" type="file" class="form-control input-md">
+						<input id="idFoto" name="fotoRotulo" type="file" class="form-control input-md" required="">
 					</div>
 
 					<div class="form-group">

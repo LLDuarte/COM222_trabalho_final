@@ -3,6 +3,8 @@
 <head>
 	<title>Vovoni - Bem vindo!</title>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
@@ -35,7 +37,7 @@
 	<div class="container div-cadastro ">
 		<div class="row">
 			<div class="col">
-				<!-- ********************* DEFINIR O MÃ‰TODO DE ACESSO DO PHP ******************************** -->
+				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
 				<form class="form-horizontal" enctype="multipart/form-data" method="POST">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Entre para a comunidade!</h1>
@@ -101,7 +103,7 @@
 	</div>
 	<center>
 		<div class="div-rodape">
-			Â© Copyright 2017 - Todos os direitos reservados <br>
+			© Copyright 2017 - Todos os direitos reservados <br>
 			Edson Valdir | Leandro Duarte | Victor Rodrigues
 		</div>
 	</center>	

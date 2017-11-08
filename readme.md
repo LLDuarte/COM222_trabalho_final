@@ -33,3 +33,13 @@ Isso tudo é tratado no Core.php
 
 -arquivo controller.php:
 	-Serve para renderizar as paginas, ou seja, chama as views
+
+-DETALHE:
+
+posso pegar variaveis na view, de duas formas;
+
+--nos filtros:
+
+	$dados['filters'] = ...
+
+	$viewData['filters']['...'] ou $filters['...']
