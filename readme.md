@@ -39,6 +39,9 @@ Isso tudo é tratado no Core.php
 posso pegar variaveis na view, de duas formas;
 
 --nos filtros:
+	
+	OBS: quando for jogar dados provindos do BD, sempre usar o mesmo nome da coluna que está no BD
+
 
 	$dados['filters'] = ...
 

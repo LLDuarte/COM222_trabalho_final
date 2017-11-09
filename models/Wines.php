@@ -17,14 +17,14 @@ class Wines extends model{
 				
 				switch ($foto['type']) {
 					case 'image/jpeg':
-						$md5_name .= '.jpeg';
-						break;
+					$md5_name .= '.jpeg';
+					break;
 					case 'image/jpg':
-						$md5_name .= '.jpg';
-						break;	
+					$md5_name .= '.jpg';
+					break;	
 					case 'image/png':
-						$md5_name .= '.png';
-						break;					
+					$md5_name .= '.png';
+					break;					
 				}
 
 				move_uploaded_file($foto['tmp_name'], 'assets/images/rotulos/'.$md5_name);
@@ -43,18 +43,18 @@ class Wines extends model{
 		if($sql->rowCount() == 0) {
 			
 			$consulta = "INSERT INTO vinho SET 
-							nome = :nome, 
-							tipo_uva = :tipoUva, 
-							pais = :pais, 
-							vinicola = :vinicola, 
-							preco = :preco, 
-							tipo_vinho = :tipoVinho, 
-							regiao = :regiao, 
-							comidas = :acompanhamento, 
-							rotulo = :foto, 
-							estilo = :estilo,
-							email_usuario = :email";
-							
+			nome = :nome, 
+			tipo_uva = :tipoUva, 
+			pais = :pais, 
+			vinicola = :vinicola, 
+			preco = :preco, 
+			tipo_vinho = :tipoVinho, 
+			regiao = :regiao, 
+			comidas = :acompanhamento, 
+			rotulo = :foto, 
+			estilo = :estilo,
+			email_usuario = :email";
+
 			
 			$sql = $this->db->prepare($consulta);
 			$sql->bindValue(":nome", $nome);
@@ -77,14 +77,29 @@ class Wines extends model{
 			return "Este vinho já está cadastrado.";
 		}
 	}
+
+	public function getMaxPreco(){
+		$array = array();
+
+		$sql = "SELECT preco FROM vinho ORDER BY preco DESC LIMIT 1";
+		$sql = $this->db->query($sql);
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetch();
+
+			return $array['preco'];
+		}else{
+			return '0';
+		}
+		
+	}
 	
 	public function getList($inicio = 0, $limit = 3, $filters = array()){
 
 		$array = array();
 
-		$where = array(
-			'1=1'
-		);
+		//classe que constroi os where's
+		$where = $this->constroiComandoWhere($filters);
 
 
 		$consulta = "SELECT 
@@ -131,9 +146,8 @@ class Wines extends model{
 
 	public function getTotal($filters = array()){
 
-		$where = array(
-			'1=1'
-		);
+		//classe que constroi os where's
+		$where = $this->constroiComandoWhere($filters);
 
 		$sql = "SELECT 
 		count(*) as c 
@@ -143,6 +157,9 @@ class Wines extends model{
 
 		$sql = $this->db->prepare($sql);
 		
+		//classe que constroi os binds
+		$this->constroiBindValue($filters, $sql);
+
 		$sql->execute();
 		$resultado = $sql->fetch();
 
@@ -150,10 +167,37 @@ class Wines extends model{
 	}
 
 	//retorna uma lista de todos os tipos de vinhos cadastrados
-	public function getListTipoVinho(){
+	public function getListTipoVinho($filters = array()){
+		
+		//classe que constroi os where's
+		$where = $this->constroiComandoWhere($filters);
+
 		$array = array();
 
-		$sql = "SELECT DISTINCT tipo_vinho FROM vinho";
+		$sql = "SELECT DISTINCT 
+					tipo_vinho 
+				FROM 
+					vinho
+				WHERE ".implode(' AND ', $where)."";
+		$sql = $this->db->prepare($sql);
+
+		//classe que constroi os binds
+		$this->constroiBindValue($filters, $sql);
+
+		$sql->execute();
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}
+
+	//retorna uma lista de todos os tipos de uvas cadastradas
+	public function getListTipoUva(){
+		$array = array();
+
+		$sql = "SELECT DISTINCT tipo_uva FROM vinho";
 		$sql = $this->db->query($sql);
 		
 		if($sql->rowCount() > 0) {
@@ -161,5 +205,62 @@ class Wines extends model{
 		}
 
 		return $array;
+	}
+
+	//retorna uma lista de todos os paises cadastrados
+	public function getListPais(){
+		$array = array();
+
+		$sql = "SELECT DISTINCT pais FROM vinho";
+		$sql = $this->db->query($sql);
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}
+
+	//retorna uma lista de todos os estilos de vinhos cadastrados
+	public function getListEstilo(){
+		$array = array();
+
+		$sql = "SELECT DISTINCT estilo FROM vinho";
+		$sql = $this->db->query($sql);
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}
+
+	//retorna uma lista de todos as harmonizacoes com comidas cadastradas
+	public function getListComida(){
+		$array = array();
+
+		$sql = "SELECT DISTINCT comidas FROM vinho";
+		$sql = $this->db->query($sql);
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}	
+
+	private function constroiComandoWhere($filters = array()){
+		$where = array(
+			'1=1'
+		);
+
+		return $where;
+	}
+
+	//&$sql significa que tudo que acontecer dentro da classe, irá acontecer do lado de fora tbm
+	private function constroiBindValue($filters = array(), &$sql){ 
+		if(!empty($filters[''])){
+			$sql->bindValue(':', $filters['']);
+		}
 	}
 }

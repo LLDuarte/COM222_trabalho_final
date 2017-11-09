@@ -22,8 +22,10 @@ class homeController extends controller{
 		$filtros = new Filters();
 		$usuario = new Usuarios();
 
+		$filters = array();
+
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);		
-		$dados['filters'] = $filtros->getFilters();
+		$dados['filters'] = $filtros->getFilters($filters);
 		
 		$this->loadTemplate('home', $dados);
 

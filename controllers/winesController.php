@@ -20,7 +20,14 @@ class winesController extends controller{
 			$paginaAtual = $_GET['p'];
 		}
 
+		/********/
+
 		$filters = array();
+
+		//todos os filtros estão nesta variavel filter
+		if(!empty($_GET['filter']) && is_array($_GET['filter'])){
+			$filters = $_GET['filter'];
+		}
 		
 		$inicio = ($paginaAtual * $limit) - $limit;
 
@@ -28,8 +35,9 @@ class winesController extends controller{
 		$dados['totalItens'] = $wines->getTotal($filters);
 		$dados['numeroPaginas'] = ceil($dados['totalItens']/$limit); //ceil arrendonda para cima
 		$dados['paginaAtual'] = $paginaAtual;
-		$dados['filters'] = $filtros->getFilters();
-				
+		$dados['filters'] = $filtros->getFilters($filters);			
+		$dados['filters_selected'] = $filters;
+
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
 
 		$this->loadTemplate('wines', $dados);

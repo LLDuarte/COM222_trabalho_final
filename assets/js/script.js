@@ -1,18 +1,19 @@
 $(function() {
+
+	//slider de preco
 	$( "#slider-range" ).slider({
 		range: true,
 		min: 0,
 		max: maxslider,
-		values: [ 25, 100 ],
+		values: slidervalues,
 		slide: function( event, ui ) {
 			$( "#amount" ).val( "R$" + ui.values[ 0 ] + " - R$" + ui.values[ 1 ] );
 		}
 	});
 	$( "#amount" ).val( "R$" + $( "#slider-range" ).slider( "values", 0 ) +
 		" - R$" + $( "#slider-range" ).slider( "values", 1 ) );
-});
 
-$( function() {
+	//slider de avaliacao
 	$( "#slider-range-max" ).slider({
 		range: "max",
 		min: 1,
@@ -24,4 +25,10 @@ $( function() {
 		}
 	});
 	$( "#estrela" ).val( $( "#slider-range-max" ).slider( "value" ) );
-} );
+
+	//todos os filtros 
+	$(".filterarea").find('input').on('change', function(){
+		$(".filterarea form").submit();
+	});
+});
+
