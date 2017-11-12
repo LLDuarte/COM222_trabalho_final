@@ -23,7 +23,8 @@
 							<div class="filterbox">
 								<div class="filtertitle">Intervalo de preços</div>
 								<div class="filtercontent">
-
+									<input type="hidden" id="slider0" name="filter[slider0]" value="<?php echo $viewData['filters']['slider0'] ?>">
+									<input type="hidden" id="slider1" name="filter[slider1]" value="<?php echo $viewData['filters']['slider1'] ?>">
 									<input type="text" id="amount" readonly style="border:0; color:darkgray; font-weight:bold;">
 
 									<div id="slider-range" style="background-color: #430C0C;"></div>
@@ -33,6 +34,7 @@
 							<div class="filterbox">
 								<div class="filtertitle">Intervalo de avaliações</div>
 								<div class="filtercontent">
+									<input type="hidden" id="slider3" name="filter[slider3]" value="<?php echo  $viewData['filters']['slider3']?>">
 									<input type="text" id="estrela" readonly style="border:0; color:darkgray; font-weight:bold;">	<div id="slider-range-max" style="background-color: #430C0C; "></div>
 								</div>
 							</div>

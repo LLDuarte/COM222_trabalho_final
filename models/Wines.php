@@ -78,16 +78,24 @@ class Wines extends model{
 		}
 	}
 
-	public function getMaxPreco(){
+	public function getMaxPreco($filters = array()){
 		$array = array();
 
-		$sql = "SELECT preco FROM vinho ORDER BY preco DESC LIMIT 1";
-		$sql = $this->db->query($sql);
+		$sql = "SELECT 
+					preco 
+				FROM 
+					vinho
+				 ORDER BY preco DESC 
+				LIMIT 1";
+		$sql = $this->db->prepare($sql);
+
+		$sql->execute();
 		
 		if($sql->rowCount() > 0) {
 			$array = $sql->fetch();
 
-			return $array['preco'];
+			return $array['preco'] + 1.0;
+
 		}else{
 			return '0';
 		}
@@ -100,16 +108,20 @@ class Wines extends model{
 
 		//classe que constroi os where's
 		$where = $this->constroiComandoWhere($filters);
-
-
+				
 		$consulta = "SELECT 
-		nome, preco, regiao, rotulo, tipo_vinho 
+		* /*my_wines.avaliacao as avaliacao*/		
 		FROM vinho
-		WHERE ".implode(' AND ', $where)."	
+		/*INNER JOIN my_wines ON vinho.tipo_vinho = my_wines.tipo_vinho and vinho.email_usuario = my_wines.email_usuario and vinho.nome = my_wines.nome_vinho*/
+		WHERE ".implode(' AND ', $where)."
 		LIMIT 
 		$inicio, $limit";
 
+		//echo $consulta; exit;
 		$sql = $this->db->prepare($consulta);
+
+		$this->constroiBindValue($filters, $sql);
+
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
@@ -167,24 +179,15 @@ class Wines extends model{
 	}
 
 	//retorna uma lista de todos os tipos de vinhos cadastrados
-	public function getListTipoVinho($filters = array()){
+	public function getListTipoVinho(){
 		
-		//classe que constroi os where's
-		$where = $this->constroiComandoWhere($filters);
-
 		$array = array();
 
 		$sql = "SELECT DISTINCT 
 					tipo_vinho 
 				FROM 
-					vinho
-				WHERE ".implode(' AND ', $where)."";
-		$sql = $this->db->prepare($sql);
-
-		//classe que constroi os binds
-		$this->constroiBindValue($filters, $sql);
-
-		$sql->execute();
+					vinho";
+		$sql = $this->db->query($sql);
 		
 		if($sql->rowCount() > 0) {
 			$array = $sql->fetchAll();
@@ -254,13 +257,67 @@ class Wines extends model{
 			'1=1'
 		);
 
+
+		//$filters['tipo_vinho'] vem do name da view wines.php
+		//a saida sera por exemplo tipo_vinho IN ('Branco', 'Tinto')
+		if (!empty($filters['tipo_vinho'])) {
+			$where[] = "tipo_vinho IN ('".implode("','", $filters['tipo_vinho'])."')";
+		}
+
+		//$filters['slider0'] vem do name da view wines.php
+		if (!empty($filters['slider0'])) {
+			$where[] = "preco >= :slider0";
+		}
+
+		//$filters['slider1'] vem do name da view wines.php
+		if (!empty($filters['slider1'])) {
+			$where[] = "preco <= :slider1";
+		}
+
+		//$filters['slider3'] vem do name da view wines.php
+		/*if (!empty($filters['slider3'])) {
+			$where[] = "avaliacao >= :slider3)";
+		}*/
+
+		//$filters['tipo_uva'] vem do name da view wines.php
+		//a saida sera por exemplo tipo_uva IN ('Merlot')
+		if (!empty($filters['tipo_uva'])) {
+			$where[] = "tipo_uva IN ('".implode("','", $filters['tipo_uva'])."')";
+		}
+
+		//$filters['pais'] vem do name da view wines.php
+		//a saida sera por exemplo pais IN ('Brasil')
+		if (!empty($filters['pais'])) {
+			$where[] = "pais IN ('".implode("','", $filters['pais'])."')";
+		}
+
+		//$filters['estilo'] vem do name da view wines.php
+		//a saida sera por exemplo estilo IN ('Leve')
+		if (!empty($filters['estilo'])) {
+			$where[] = "estilo IN ('".implode("','", $filters['estilo'])."')";
+		}
+
+		//$filters['comidas'] vem do name da view wines.php
+		//a saida sera por exemplo comidas IN ('Leve')
+		if (!empty($filters['comidas'])) {
+			$where[] = "comidas IN ('".implode("','", $filters['comidas'])."')";
+		}
+
 		return $where;
 	}
 
 	//&$sql significa que tudo que acontecer dentro da classe, irá acontecer do lado de fora tbm
 	private function constroiBindValue($filters = array(), &$sql){ 
-		if(!empty($filters[''])){
-			$sql->bindValue(':', $filters['']);
+		if(!empty($filters['slider0'])){
+			$sql->bindValue(':slider0', $filters['slider0']);
 		}
+
+		if(!empty($filters['slider1'])){
+			$sql->bindValue(':slider1', $filters['slider1']);
+		}
+
+		/*if(!empty($filters['slider3'])){
+			$sql->bindValue(':slider3', $filters['slider3']);
+		}*/
 	}
 }
