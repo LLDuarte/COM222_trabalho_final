@@ -1,5 +1,5 @@
 <div class="product_item">
-	<a href="">
+	<a href="<?php echo BASE_URL; ?>product">
 
 		<div class="product_image">
 			<img src="<?php echo BASE_URL; ?>assets/images/rotulos/<?php echo $images[0]['rotulo']; ?>" width="100%" />

@@ -1,10 +1,10 @@
 <?php 
-/**
-* 
-*/
-class winesController extends controller{
-	
-	public function index(){
+	/**
+	* 
+	*/
+	class productController extends controller{
+		
+		public function index(){
 		$dados = array();
 
 		$wines = new Wines();
@@ -20,7 +20,7 @@ class winesController extends controller{
 			$paginaAtual = $_GET['p'];
 		}
 
-		/********/
+			/********/
 
 		$filters = array();
 
@@ -28,7 +28,7 @@ class winesController extends controller{
 		if(!empty($_GET['filter']) && is_array($_GET['filter'])){
 			$filters = $_GET['filter'];
 		}
-		
+
 		$inicio = ($paginaAtual * $limit) - $limit;
 
 		$dados['list'] = $wines->getList($inicio,$limit, $filters);
@@ -40,6 +40,7 @@ class winesController extends controller{
 
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
 
-		$this->loadTemplate('wines', $dados);
+		$this->loadTemplate('product', $dados);
 	}
 }
+?>

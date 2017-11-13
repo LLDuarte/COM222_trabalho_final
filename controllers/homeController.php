@@ -6,7 +6,7 @@
 class homeController extends controller{
 
 	public function __construct(){
-	
+
 		$usuario = new Usuarios();
 
 		//$usuario->verificarLogin();
@@ -19,9 +19,19 @@ class homeController extends controller{
 			'usuario_nome' => ''
 		);
 
+		$filtros = new Filters();
 		$usuario = new Usuarios();
-		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
 
+		$filters = array();
+
+		//todos os filtros estão nesta variavel filter
+		if(!empty($_GET['filter']) && is_array($_GET['filter'])){
+			$filters = $_GET['filter'];
+		}
+
+		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);		
+		$dados['filters'] = $filtros->getFilters($filters);
+		
 		$this->loadTemplate('home', $dados);
 
 	}

@@ -122,7 +122,7 @@ a:hover {
 
 .esquerda_foto{
 	background-color: #FFFFF0;
-	height: 350px;
+	height: 300px;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 15px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -151,6 +151,18 @@ a:hover {
 	width: 130px;
 }
 
+.menu-wines ul li{
+	margin: 0 auto;		
+}
+
+
+.menu-wines ul li:hover{
+	border-bottom: 2px solid #430C0C;
+	
+}
+
+
+
 /*
 wines
 */
@@ -158,12 +170,41 @@ wines
 	margin-top: 100px;
 }
 
-.filterarea {
-	border: 2px solid #ececec;
-    border-radius: 10px;
-    padding:10px;
+section {
+	margin-bottom:50px;
+}
+section .container {
+	padding:0;
 }
 
+.filterarea {
+	border: 2px solid #ececec;
+	border-radius: 10px;
+	padding:10px;
+}
+
+.filterbox{
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.filtertitle{
+	color: #430c0c;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #EEE;
+}
+
+.filteritem {
+	height:30px;
+	font-size:12px;
+}
+.filteritem label {
+	font-weight:normal;
+}
 .widget {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -173,7 +214,8 @@ wines
 	padding-bottom:15px;
 }
 h1 {
-	font-size:24px;
+	font-size:22px;
+	color: #430c0c;
 	margin-top:0;
 	margin-left:0;
 	padding-left:0;
@@ -272,3 +314,6 @@ h1 {
 	color: black;
 	transition: .8s;
 }
+
+
+

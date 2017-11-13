@@ -46,14 +46,14 @@ class Usuarios extends model{
 				
 				switch ($foto['type']) {
 					case 'image/jpeg':
-						$md5_name .= '.jpeg';
-						break;
+					$md5_name .= '.jpeg';
+					break;
 					case 'image/jpg':
-						$md5_name .= '.jpg';
-						break;	
+					$md5_name .= '.jpg';
+					break;	
 					case 'image/png':
-						$md5_name .= '.png';
-						break;					
+					$md5_name .= '.png';
+					break;					
 				}
 
 				move_uploaded_file($foto['tmp_name'], 'assets/images/images_users/'.$md5_name);
@@ -104,6 +104,48 @@ class Usuarios extends model{
 		}
 	}
 
+	public function getNomeEdicao($id){
+		$sql = $this->db->prepare("SELECT nome FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetch();
+			return $resultado['nome'];
+		}else{
+			return '';
+		}
+	}
+
+	public function getSobrenomeEdicao($id){
+		$sql = $this->db->prepare("SELECT sobrenome FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetch();
+			return $resultado['sobrenome'];
+		}else{
+			return '';
+		}
+	}
+
+	public function getEmail($id){
+		$sql = $this->db->prepare("SELECT email FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetch();
+			return $resultado['email'];
+		}else{
+			return '';
+		}
+	}
+
 	public function getFoto($id){
 		$sql = $this->db->prepare("SELECT foto FROM usuario WHERE id = :id");
 		$sql->bindValue(":id", $id);
@@ -117,5 +159,30 @@ class Usuarios extends model{
 		}else{
 			return '';
 		}
+	}
+
+	public function getUsuario($id) {
+		$sql = $this->db->prepare("SELECT * FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+		$resultado = array();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetchAll();
+
+			return $resultado;
+		}else{
+			return '';
+		}
+	}
+
+	public function editaUsuario($id, $nome, $sobrenome) {
+		$sql = $this->db->prepare("UPDATE usuario SET nome = :nome, sobrenome = :sobrenome WHERE id = :id");
+		$sql->bindValue(":nome", $nome);
+		$sql->bindValue(":sobrenome", $sobrenome);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+		
 	}
 }
