@@ -110,13 +110,12 @@ class Wines extends model{
 		//classe que constroi os where's
 		$where = $this->constroiComandoWhere($filters);
 
-		$consulta = "SELECT 
-		* /*my_wines.avaliacao as avaliacao*/		
-		FROM vinho
-		/*INNER JOIN my_wines ON vinho.tipo_vinho = my_wines.tipo_vinho and vinho.email_usuario = my_wines.email_usuario and vinho.nome = my_wines.nome_vinho*/
-		WHERE ".implode(' AND ', $where)."
-		LIMIT 
-		$inicio, $limit";
+		$consulta = "SELECT * 
+					FROM 
+						vinho
+					WHERE ".implode(' AND ', $where)."
+					LIMIT 
+						$inicio, $limit";
 
 		//echo $consulta; exit;
 		$sql = $this->db->prepare($consulta);
@@ -277,9 +276,9 @@ class Wines extends model{
 		}
 
 		//$filters['slider3'] vem do name da view wines.php
-		/*if (!empty($filters['slider3'])) {
-			$where[] = "avaliacao >= :slider3)";
-		}*/
+		if (!empty($filters['slider3'])) {
+			$where[] = "avaliacao >= :slider3";
+		}
 
 		//$filters['tipo_uva'] vem do name da view wines.php
 		//a saida sera por exemplo tipo_uva IN ('Merlot')
@@ -318,9 +317,9 @@ class Wines extends model{
 			$sql->bindValue(':slider1', $filters['slider1']);
 		}
 
-		/*if(!empty($filters['slider3'])){
+		if(!empty($filters['slider3'])){
 			$sql->bindValue(':slider3', $filters['slider3']);
-		}*/
+		}
 	}
 
 	//Retorna a lista de vinhos cadastrados de acordo com o usuário
