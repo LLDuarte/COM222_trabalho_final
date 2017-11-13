@@ -82,11 +82,11 @@ class Wines extends model{
 		$array = array();
 
 		$sql = "SELECT 
-					preco 
-				FROM 
-					vinho
-				 ORDER BY preco DESC 
-				LIMIT 1";
+		preco 
+		FROM 
+		vinho
+		ORDER BY preco DESC 
+		LIMIT 1";
 		$sql = $this->db->prepare($sql);
 
 		$sql->execute();
@@ -102,13 +102,14 @@ class Wines extends model{
 		
 	}
 	
+	//Lista de todos os vinhos cadastrados
 	public function getList($inicio = 0, $limit = 3, $filters = array()){
 
 		$array = array();
 
 		//classe que constroi os where's
 		$where = $this->constroiComandoWhere($filters);
-				
+
 		$consulta = "SELECT 
 		* /*my_wines.avaliacao as avaliacao*/		
 		FROM vinho
@@ -156,6 +157,7 @@ class Wines extends model{
 		return $array;
 	}
 
+	//Retorna o total de vinhos cadastrados
 	public function getTotal($filters = array()){
 
 		//classe que constroi os where's
@@ -184,9 +186,9 @@ class Wines extends model{
 		$array = array();
 
 		$sql = "SELECT DISTINCT 
-					tipo_vinho 
-				FROM 
-					vinho";
+		tipo_vinho 
+		FROM 
+		vinho";
 		$sql = $this->db->query($sql);
 		
 		if($sql->rowCount() > 0) {
@@ -319,5 +321,49 @@ class Wines extends model{
 		/*if(!empty($filters['slider3'])){
 			$sql->bindValue(':slider3', $filters['slider3']);
 		}*/
+	}
+
+	//Retorna a lista de vinhos cadastrados de acordo com o usuário
+	public function getListOfWines($inicio = 0, $limit = 3, $email){
+
+		$array = array();
+
+
+		$consulta = "SELECT * FROM vinho WHERE email_usuario = :email LIMIT $inicio, $limit";
+
+		//echo $consulta; exit;
+		$sql = $this->db->prepare($consulta);
+
+		$sql->bindValue(":email", $email);
+
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$array = $sql->fetchAll();
+
+			foreach($array as $key => $item) {
+
+				$array[$key]['images'] = $this->getImagesByWines($item['tipo_vinho'], $item['nome']);
+
+			}
+
+		}
+
+		return $array;
+	}
+
+	//Retorna o total de vinhos cadastrados de acordo com o usuario
+	public function getTotalOfWines($email){
+				
+		$sql = "SELECT count(*) as c from vinho WHERE email_usuario = :email" ;
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":email", $email);
+		
+		$sql->execute();
+		$resultado = $sql->fetch();
+
+		return $resultado['c'];		
 	}
 }

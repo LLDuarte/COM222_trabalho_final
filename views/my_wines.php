@@ -32,7 +32,32 @@
 								</li>								
 							</ul>
 						</div>
-						
+						<br>
+						<div class="col-sm-12">
+							<div class="row">
+								<?php
+								$a = 0;
+								?>
+								<?php foreach($list as $product_item): ?>
+									<div class="col-sm-3">
+										<?php $this->loadView('rotulos_wines', $product_item); ?>
+									</div>
+									<?php
+									if($a >= 3 ) {
+										echo '</div><div class="row">';
+									}
+									?>
+								<?php endforeach; ?>
+							</div>
+							<br>
+							<?php for($q=1;$q<=$numeroPaginas;$q++):?>
+								<div class="paginationItem <?php echo ($paginaAtual==$q)?'pag_active':''; ?>">
+									<a href="<?php echo BASE_URL;?>wines/?p=<?php echo $q; ?>">
+										<?php echo $q;?>
+									</a>
+								</div>
+							<?php endfor;?>
+						</div>
 					</div>
 				</div>
 			</div>				

@@ -24,6 +24,11 @@ class homeController extends controller{
 
 		$filters = array();
 
+		//todos os filtros estão nesta variavel filter
+		if(!empty($_GET['filter']) && is_array($_GET['filter'])){
+			$filters = $_GET['filter'];
+		}
+
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);		
 		$dados['filters'] = $filtros->getFilters($filters);
 		

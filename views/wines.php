@@ -119,7 +119,11 @@
 				<br>
 				<?php for($q=1;$q<=$numeroPaginas;$q++):?>
 					<div class="paginationItem <?php echo ($paginaAtual==$q)?'pag_active':''; ?>">
-						<a href="<?php echo BASE_URL;?>wines/?p=<?php echo $q; ?>">
+						<a href="<?php echo BASE_URL;?>wines/?<?php 
+							$pagArray = $_GET;
+							$pagArray['p'] = $q;
+							echo http_build_query($pagArray);
+						 ?>">
 							<?php echo $q;?>
 						</a>
 					</div>
