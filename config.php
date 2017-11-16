@@ -9,7 +9,7 @@ $config = array();
 	//conexão local
 if(ENVIRONMENT == "development"){
 	define("BASE_URL", "http://localhost/COM222_trabalho_final/");
-	$config['dbname'] = 'vovoni';
+	$config['dbname'] = 'vovoni_bd';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';

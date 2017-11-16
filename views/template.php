@@ -27,7 +27,10 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="<?php echo BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
-				</li>								
+				</li>	
+				<li class="nav-item active">
+					<a class="nav-link" href="<?php echo BASE_URL; ?>wines">Wines <span class="sr-only">(current)</span></a>
+				</li>							
 				<?php 
 				if(!empty($viewData['usuario_nome'])){ 
 					?>
@@ -39,7 +42,7 @@
 							<?php echo $viewData['usuario_nome'];?>
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo BASE_URL;?>perfil">Editar Perfil</a>
+							<a class="dropdown-item" href="<?php echo BASE_URL;?>edicao_user">Editar Perfil</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="<?php echo BASE_URL;?>login/sair">Sair</a>			
 						</div>

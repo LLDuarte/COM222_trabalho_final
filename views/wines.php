@@ -10,10 +10,13 @@
 							<div class="filterbox">
 								<div class="filtertitle">Tipos de vinho</div>
 								<div class="filtercontent">
+
+									
+									
 									<?php foreach($viewData['filters']['tipo_vinho'] as $item):?>
 										<div class="filteritem">
-											<input type="checkbox" <?php echo (isset($viewData['filters_selected']['tipo_vinho']) && in_array($item['tipo_vinho'], $viewData['filters_selected']['tipo_vinho']))?'checked="checked"':''; ?>  name="filter[tipo_vinho][]" value="<?php echo $item['tipo_vinho']; ?>" id="filter_tipo_vinho<?php echo $item['tipo_vinho']; ?>" /> 
-											<label for="filter_tipo_vinho<?php echo $item['tipo_vinho']; ?>"><?php echo $item['tipo_vinho']; ?>											
+											<input type="checkbox" <?php echo (isset($viewData['filters_selected']['tipo_vinho']) && in_array($item['nome'], $viewData['filters_selected']['tipo_vinho']))?'checked="checked"':''; ?>  name="filter[tipo_vinho][]" value="<?php echo $item['nome']; ?>" id="filter_tipo_vinho<?php echo $item['nome']; ?>" /> 
+											<label for="filter_tipo_vinho<?php echo $item['nome']; ?>"><?php echo $item['nome']; ?>											
 											</label>
 										</div>
 									<?php endforeach; ?> 
@@ -120,15 +123,15 @@
 				<?php for($q=1;$q<=$numeroPaginas;$q++):?>
 					<div class="paginationItem <?php echo ($paginaAtual==$q)?'pag_active':''; ?>">
 						<a href="<?php echo BASE_URL;?>wines/?<?php 
-							$pagArray = $_GET;
-							$pagArray['p'] = $q;
-							echo http_build_query($pagArray);
-						 ?>">
-							<?php echo $q;?>
-						</a>
-					</div>
-				<?php endfor;?>
-			</div>
+						$pagArray = $_GET;
+						$pagArray['p'] = $q;
+						echo http_build_query($pagArray);
+						?>">
+						<?php echo $q;?>
+					</a>
+				</div>
+			<?php endfor;?>
 		</div>
 	</div>
+</div>
 </section>

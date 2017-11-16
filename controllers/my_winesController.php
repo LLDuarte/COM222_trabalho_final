@@ -23,8 +23,9 @@ class my_winesController extends controller{
 		$inicio = ($paginaAtual * $limit) - $limit;
 
 		$email_user = $usuario->getEmail($_SESSION['login']);
-		$dados['list'] = $wines->getListOfWines($inicio, $limit, $email_user);
-		$dados['totalItens'] = $wines->getTotalOfWines($email_user);
+		$dados['list'] = $wines->getListOfWines($inicio, $limit, $_SESSION['login']);
+		
+		$dados['totalItens'] = $wines->getTotalOfWines($_SESSION['login']);
 		$dados['numeroPaginas'] = ceil($dados['totalItens']/$limit); //ceil arrendonda para cima
 		$dados['paginaAtual'] = $paginaAtual;
 

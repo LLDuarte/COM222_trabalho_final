@@ -1,8 +1,8 @@
 <div class="product_item">
-	<a href="<?php echo BASE_URL; ?>product">
+	<a href="<?php echo BASE_URL; ?>product/open/<?php echo $id; ?>">
 
 		<div class="product_image">
-			<img src="<?php echo BASE_URL; ?>assets/images/rotulos/<?php echo $images[0]['rotulo']; ?>" width="100%" />
+			<img src="<?php echo BASE_URL; ?>assets/images/rotulos/<?php echo $images[0]['url']; ?>" width="100%" />
 		</div>
 		<div class="product_name"><?php echo $nome; ?></div>
 		<div class="product_brand"><?php echo $regiao; ?></div>

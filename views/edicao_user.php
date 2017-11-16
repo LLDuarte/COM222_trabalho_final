@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+teste<!DOCTYPE html>
 <html>
 <head>
 	<title>Vovoni - Bem vindo!</title>
@@ -16,22 +16,44 @@
 	<!-- MENU -->
 	<nav class="navbar fixed-top navbar-expand-lg espacamento-interno-menu bg-light">
 		
-		<a class="navbar-brand" href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL;?>assets/images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px;"></a>
+		<a class="navbar-brand" href="home"><img src="<?php echo BASE_URL;?>assets/images/logo.png" class="img-fluid" alt="Responsive image" style="height: 30px;"></a>
 		
 		<div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="<?php echo BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
-				</li>
+				</li>		
 				<li class="nav-item active">
 					<a class="nav-link" href="<?php echo BASE_URL; ?>wines">Wines <span class="sr-only">(current)</span></a>
-				</li>					
-				<li class="nav-item">
-					<a class="nav-link" href="cadastro_user">Cadastrar</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="login">Login</a>
-				</li>
+				</li>			
+				<?php 
+				if(!empty($viewData['usuario_nome'])){ 
+					?>
+					<li class="nav-item">
+						<a class="nav-link" href="my_wines">Explorar</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<?php echo $viewData['usuario_nome'];?>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?php echo BASE_URL;?>perfil">Editar Perfil</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="<?php echo BASE_URL;?>login/sair">Sair</a>			
+						</div>
+					</li>					
+					<?php
+				} else {
+					?>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo BASE_URL; ?>cadastro_user">Cadastrar</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login">Login</a>
+					</li>
+					<?php 
+				}
+				?>
 			</ul>
 		</div>
 	</nav>
@@ -40,16 +62,16 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_user/cadastraUsuario">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="edicao_user/editaCadastro">
 					<!-- Form Name -->
-					<h1 class="welcome text-center">Entre para a comunidade!</h1>
+					<h1 class="welcome text-center">Edite seu perfil</h1>
 					
 					
 					<!-- Text input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idNome">Nome</label>  
 						<div class="col-md-12">
-							<input id="idNome" name="nome" type="text" placeholder="Digite o nome" class="form-control input-md" required="">
+							<input id="idNome" name="nome" type="text" value="<?php echo $viewData['list'][0];?>" class="form-control input-md" value="" required="">
 
 						</div>
 					</div>
@@ -58,32 +80,25 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idSobrenome">Sobrenome</label>  
 						<div class="col-md-12">
-							<input id="idSobrenome" name="sobrenome" type="text" placeholder="Digite o sobrenome" class="form-control input-md" required="">
+							<input id="idSobrenome" name="sobrenome" type="text" value="<?php echo $viewData['list'][1];?>" class="form-control input-md" required="">
 
 						</div>
 					</div>
 
-					<!-- Password input-->
+					<!-- Email input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="idEmail">Email</label>
+						<label class="col-md-7 control-label" for="idEmail">Email <small>(Não é possível trocar)</small></label>
 						<div class="col-md-12">
-							<input id="idEmail" name="email" type="email" placeholder="Digite o email" class="form-control input-md" required="">
-
-						</div>
-					</div>
-					<!-- Password input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idSenha">Senha</label>
-						<div class="col-md-12">
-							<input id="idSenha" name="senha" type="password" placeholder="Digite a senha" class="form-control input-md" required="">
+							<input id="idEmail" name="email" type="email" value="<?php echo $viewData['list'][2];?>" class="form-control input-md" readonly>
 
 						</div>
 					</div>
 					<!-- Password input-->
 					<div class="form-group">
-						<label class="col-md-6 control-label" for="idFoto">Foto (opcional)</label>
+						<label class="col-md-7 control-label" for="idSenha">Senha <small>(Não é possível trocar)</small></label>
 						<div class="col-md-12">
-							<input id="idFoto" name="foto" type="file" class="form-control input-md">
+							<input id="idSenha" name="senha" type="password" value="<?php echo $viewData['list'][3];?>" class="form-control input-md" readonly>
+
 						</div>
 					</div>
 

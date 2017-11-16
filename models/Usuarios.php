@@ -104,6 +104,35 @@ class Usuarios extends model{
 		}
 	}
 
+	public function getNomeUser($id = array()){
+
+		
+      	//print_r($id_user); exit;
+      	$id_user = $id;
+      	
+      	//echo print_r($id_user); exit;
+		@$array_implode = "('".implode("','", array_column($id_user, 'id_usuario'))."')"; 
+		
+		$resultado = array();
+		//print_r($id); exit;
+
+		$consulta = "SELECT nome, sobrenome 
+						FROM usuario 
+						WHERE id IN ".$array_implode."";
+		//echo $consulta; exit;
+		$sql = $this->db->query($consulta);
+		
+
+		if($sql->rowCount() > 0) {
+		
+			$resultado = $sql->fetchAll();				
+			return $resultado;
+				
+		}
+		
+		
+	}
+
 	public function getEmail($id){
 		$sql = $this->db->prepare("SELECT email FROM usuario WHERE id = :id");
 		$sql->bindValue(":id", $id);
@@ -131,5 +160,34 @@ class Usuarios extends model{
 		}else{
 			return '';
 		}
+	}
+
+	public function getDados($id){
+
+		$resultado = array();
+
+		$sql = $this->db->prepare("SELECT * FROM usuario WHERE id = :id");
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			
+			$resultado = $sql->fetch();
+
+			return $resultado;
+
+		}else{
+			return '';
+		}
+	}
+
+	public function edita_usuario($id, $nome, $sobrenome) {
+		
+		$sql = $this->db->prepare("UPDATE usuario SET nome = :nome, sobrenome = :sobrenome WHERE id = :id");
+		$sql->bindValue(":nome", $nome);
+		$sql->bindValue(":sobrenome", $sobrenome);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+		
 	}
 }

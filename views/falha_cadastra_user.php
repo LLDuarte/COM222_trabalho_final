@@ -24,6 +24,9 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="<?php echo BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
 				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="<?php echo BASE_URL; ?>wines">Wines <span class="sr-only">(current)</span></a>
+				</li>	
 				<li class="nav-item">
 					<a class="nav-link" href="../cadastro_user">Cadastrar</a>
 				</li>

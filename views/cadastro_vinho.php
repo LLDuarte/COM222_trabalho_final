@@ -9,7 +9,12 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/style.css">		
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.theme.min.css">	
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">	
 </head>
 
 <body>
@@ -22,6 +27,9 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="<?php echo BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
+				</li>	
+				<li class="nav-item active">
+					<a class="nav-link" href="<?php echo BASE_URL; ?>wines">Wines <span class="sr-only">(current)</span></a>
 				</li>				
 				<?php 
 				if(!empty($viewData['usuario_nome'])){ 
@@ -56,16 +64,18 @@
 	</nav>
 
 	<div class="container div-cadastro ">
+		
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
 				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_vinho/insereVinho">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Cadastre um novo vinho!</h1>
-
+					
 					<div class="form-group">
 						<label for="inputNome">Nome</label>
-						<input type="text" name="nome" class="form-control" id="inputAddress" placeholder="Nome do vinho..." required>
+						<input type="text" name="nome" class="form-control" id="nome_vinho" placeholder="Nome do vinho..." required>
+						
 					</div>
 
 					<div class="form-row">
@@ -156,5 +166,32 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/script.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery.autocomplete.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<?php 
+
+	$vinhos = '';
+	foreach ($consulta as $nome) {
+		$vinhos.= '"'.$nome['nome'].'",';		
+	}
+
+	?>
+	<script type="text/javascript">
+		$( function() {
+			
+			var availableTags = [
+
+			<?php echo ($vinhos); ?>
+
+			];
+			$( "#nome_vinho" ).autocomplete({
+				source: availableTags
+			});
+		} );
+	</script>
 </body>
 </html>

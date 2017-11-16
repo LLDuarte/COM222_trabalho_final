@@ -28,18 +28,34 @@ class winesController extends controller{
 		if(!empty($_GET['filter']) && is_array($_GET['filter'])){
 			$filters = $_GET['filter'];
 		}
-		
+
+			
 		$inicio = ($paginaAtual * $limit) - $limit;
 
 		$dados['list'] = $wines->getList($inicio,$limit, $filters);
 		$dados['totalItens'] = $wines->getTotal($filters);
 		$dados['numeroPaginas'] = ceil($dados['totalItens']/$limit); //ceil arrendonda para cima
 		$dados['paginaAtual'] = $paginaAtual;
-		$dados['filters'] = $filtros->getFilters($filters);			
-		$dados['filters_selected'] = $filters;
 
+		$dados['filters'] = $filtros->getFilters($filters);		
+
+		$dados['filters_selected'] = $filters;
+		//print_r($dados['filters_selected']); exit;
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
 
 		$this->loadTemplate('wines', $dados);
+	}
+
+	public function dataAjax(){
+		$wines = new Wines();
+
+		
+		if(isset($_GET['key'])){
+
+			$data = $_GET['key'];
+			$consulta = $wines->getNome_Vinho($data);
+			//echo $consulta;
+			return $consulta;
+		}
 	}
 }

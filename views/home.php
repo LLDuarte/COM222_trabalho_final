@@ -5,13 +5,13 @@
 			<form class="form-horizontal" method="GET" action="wines">
 				<center>
 					<div class="form-group" style="padding-top: 10px;">
-						<select class="form-control btn btn-secondary" name="filter[select]" id="exampleFormControlSelect1">
-							<option>Tinto</option>	
-							<option>Branco</option>
-							<option>Rosé</option>
-							<option>Vinho do Porto</option>
-							<option>Espumante</option>
-							<option>Vinho de Sobremesa</option>
+						<select class="form-control btn btn-secondary" name="filter[tipo_vinho][]">
+							<option value="Tinto">Tinto</option>	
+							<option value="Branco">Branco</option>
+							<option value="Rosé">Rosé</option>
+							<option value="Porto">Vinho do Porto</option>
+							<option value="Espumante">Espumante</option>
+							<option value="Vinho de Sobremesa">Vinho de Sobremesa</option>
 						</select>
 					</div>
 				</center>

@@ -38,11 +38,15 @@ class Filters extends model{
 		if(isset($filters['slider3'])){
 			$array['slider3'] = $filters['slider3'];
 		}
+
+		/*if(isset($filters['select'])){
+			print_r($filters['select']); exit;
+			$array['tipo_vinho'] = $filters['select'];
+		}*/
 		//filtro de preco
 		$array['maxslider'] = $wines->getMaxPreco($filters);
 		
 		
-
 		return $array;
 	}
 
