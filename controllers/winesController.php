@@ -14,7 +14,7 @@ class winesController extends controller{
 		//padrões da paginação
 		$paginaAtual = 1;
 		$inicio = 0;
-		$limit = 3;
+		$limit = 16;
 
 		if(!empty($_GET['p'])){
 			$paginaAtual = $_GET['p'];

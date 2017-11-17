@@ -88,7 +88,7 @@
 										<div class="filteritem">
 											<input type="checkbox" <?php echo (isset($viewData['filters_selected']['comidas']) && in_array($item['comidas'], $viewData['filters_selected']['comidas']))?'checked="checked"':''; ?>  name="filter[comidas][]" value="<?php echo $item['comidas']; ?>" id="filter_comidas<?php echo $item['comidas']; ?>" /> 
 											<label for="filter_comidas<?php echo $item['comidas']; ?>"><?php echo $item['comidas']; ?>											
-											</label>
+											</label>											
 										</div>
 									<?php endforeach; ?> 
 								</div>

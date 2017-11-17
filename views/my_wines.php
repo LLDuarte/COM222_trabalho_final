@@ -15,7 +15,11 @@
 						</div>
 						<div class="row justify-content-center">
 							
-							<h1>Avaliações: </h1>
+							<h1>Avaliações realizadas: </h1>
+						</div>
+						<div class="row justify-content-center">
+							
+							<h1><?php echo $qtdAval['qtd']; ?> </h1>
 						</div>
 					</div>
 					<div class="col-sm-7 mr-sm-auto direita_vinhos">						
@@ -52,7 +56,7 @@
 							<br>
 							<?php for($q=1;$q<=$numeroPaginas;$q++):?>
 								<div class="paginationItem <?php echo ($paginaAtual==$q)?'pag_active':''; ?>">
-									<a href="<?php echo BASE_URL;?>wines/?p=<?php echo $q; ?>">
+									<a href="<?php echo BASE_URL;?>my_wines/?p=<?php echo $q; ?>">
 										<?php echo $q;?>
 									</a>
 								</div>

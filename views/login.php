@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="<?php echo BASE_URL;?>assets/images/wine.ico" type="image/x-icon"/>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -56,7 +57,7 @@
 
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-secondary">Entrar</button> <a href="cadastro_user"><button class="btn btn-secondary">Cadastrar</button></a></center>
+			<center><button type="submit" class="btn btn-secondary">Entrar</button> </center>
 		</form>
 	</div>
 	<center>

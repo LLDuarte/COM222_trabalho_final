@@ -264,34 +264,43 @@ class Wines extends model{
 			return '';
 		}
 	}
+	public function getId_Users($id, $id_user){
+		$array = array();
 
-	public function getAvaliacao_Comments($id){
-
-		/*$consulta = "SELECT 
-		review, avaliacao
-		FROM
-		avaliacao 
-		WHERE
-		id_vinho = :id";
-
-		$sql = $this->db->prepare($consulta);
-		$sql->bindValue(":id", $id);
+		$array = $this->getIDUser($id, $id_user);
 		
+		return $array;
+	}
+
+	public function getIDUser($id, $id_user){
+		$array = array();
+
+		$sql = "SELECT
+		*,
+		(select usuario.id from usuario where usuario.id = avaliacao.id_usuario) as user_id
+		FROM avaliacao
+		WHERE id_vinho = :id AND id_usuario = :id_user
+		ORDER BY data DESC";
+		
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->bindValue(":id_user", $id_user);
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
-			
-			$resultado = $sql->fetchAll();		
-			//print_r($resultado); exit;
-			return $resultado;
+			$array = $sql->fetch();
+		}
 
-		}else{
-			return "Não há avaliações";
-		}*/
+		return $array;
+	}
+
+	public function getAvaliacao_Comments($id){
+
 		$array = array();
 
 		$array = $this->getRates($id);
-		//print_r($array); exit;
+		
 		return $array;
 
 	}
@@ -300,7 +309,8 @@ class Wines extends model{
 
 		$sql = "SELECT
 		*,
-		(select concat(usuario.nome,' ',usuario.sobrenome) from usuario where usuario.id = avaliacao.id_usuario) as user_name
+		(select concat(usuario.nome,' ',usuario.sobrenome) from usuario where usuario.id = avaliacao.id_usuario) as user_name,
+		(select usuario.id from usuario where usuario.id = avaliacao.id_usuario) as user_id
 		FROM avaliacao
 		WHERE id_vinho = :id
 		ORDER BY data DESC";
@@ -312,6 +322,60 @@ class Wines extends model{
 
 		if($sql->rowCount() > 0) {
 			$array = $sql->fetchAll();
+		}
+
+
+		return $array;
+	}
+
+	public function getAvaliacao_Comments_user($id){
+		$array = array();
+
+		$array = $this->getAval_Usuario($id);
+		
+		return $array;
+	}
+
+	public function getAval_Usuario($id){
+		$array = array();
+
+		$sql = "SELECT
+		*,
+		(select concat(usuario.nome,' ',usuario.sobrenome) from usuario where usuario.id = avaliacao.id_usuario) as user_name,
+		(select usuario.id from usuario where usuario.id = avaliacao.id_usuario) as user_id
+		FROM avaliacao
+		WHERE id_usuario = :id 
+		ORDER BY data DESC";
+		
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+
+		return $array;
+	}
+
+	public function getQtdAval($id){
+		$array = array();
+
+		$sql = "SELECT
+		count(avaliacao) as qtd 
+		FROM avaliacao
+		WHERE id_usuario = :id
+		ORDER BY data DESC";
+		
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetch();
 		}
 
 
@@ -395,7 +459,7 @@ class Wines extends model{
 
 		$array = array();
 
-		$sql = "SELECT avaliacao from avaliacao where id_vinho = :id";
+		$sql = "SELECT avg(avaliacao) as avaliacao, count(avaliacao) as qtd from avaliacao where id_vinho = :id";
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":id", $id);

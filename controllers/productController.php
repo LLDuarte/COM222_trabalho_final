@@ -32,10 +32,13 @@
 			
 
 			$dados['list_avaliacao_comments'] = $wines->getAvaliacao_Comments($id);
+			$dados['list_id_users'] = $wines->getId_Users($id, $_SESSION['login']);
 			//print_r($dados['list_avaliacao_comments']); exit;
 			$dados['filters'] = $filtros->getFilters($filters);	 	
 
-			$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+			if(isset($_SESSION['login'])){
+				$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+			}
 
 			$info = $wines->getInfoWine($id);
 
@@ -51,6 +54,7 @@
 				//print_r($dados['product_user_aval']); exit;
 				//var_dump($dados['product_user_aval']); exit;
 				$dados['aval'] = $wines->getAvaliacao($id);
+
 				$dados['product_image'] = $wines->getFotoPorVinho($id);
 
 				$this->loadTemplate('product', $dados);
