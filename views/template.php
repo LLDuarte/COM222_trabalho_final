@@ -9,7 +9,10 @@
 	<link rel="shortcut icon" href="<?php echo BASE_URL;?>assets/images/wine.ico" type="image/x-icon"/>
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.structure.min.css">
@@ -37,10 +40,21 @@
 				if(!empty($viewData['usuario_nome'])){ 
 					?>
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo BASE_URL; ?>my_wines">Explorar</a>
+						<a class="nav-link" href="<?php echo BASE_URL; ?>my_wines">My wines</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="foto_lado_nome">
+								<?php if ($viewData['foto'] == NULL) {
+									?>
+									<img height="30px" width="30px" src="<?php echo BASE_URL.'assets/images/images_users/padrao.png';?>">	
+									<?php
+								}else{
+									?>
+									<img height="30px" width="30px" src="<?php echo BASE_URL.'assets/images/images_users/'.$viewData['foto'];?>">	
+									<?php
+								} ?>
+							</span>
 							<?php echo $viewData['usuario_nome'];?>
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -80,6 +94,7 @@
 	<script type="text/javascript">
 		var maxslider = <?php echo $viewData['filters']['maxslider']; ?>;
 	</script>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -87,6 +102,7 @@
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/script.js"></script>
+
 
 </body>
 </html>

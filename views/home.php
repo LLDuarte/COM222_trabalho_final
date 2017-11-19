@@ -6,13 +6,13 @@
 			<form class="form-horizontal" method="GET" action="wines">
 				<center>
 					<div class="form-group" style="padding-top: 10px;">
-						<select class="form-control btn btn-outline-secondary" name="filter[tipo_vinho][]">
-							<option value="Tinto">Tinto</option>	
-							<option value="Branco">Branco</option>
-							<option value="Rosé">Rosé</option>
-							<option value="Porto">Vinho do Porto</option>
-							<option value="Espumante">Espumante</option>
-							<option value="Vinho de Sobremesa">Vinho de Sobremesa</option>
+						<select class="form-control btn btn-outline-secondary seleciona" name="filter[tipo_vinho][]">
+							<option class="opcao" value="Tinto">Tinto</option>	
+							<option class="opcao" value="Branco">Branco</option>
+							<option class="opcao" value="Rosé">Rosé</option>
+							<option class="opcao" value="Porto">Vinho do Porto</option>
+							<option class="opcao" value="Espumante">Espumante</option>
+							<option class="opcao" value="Vinho de Sobremesa">Vinho de Sobremesa</option>
 						</select>
 					</div>
 				</center>
@@ -48,7 +48,7 @@
 
 			<div class="col-2 consulta-container">
 				<i class="glyphicon glyphicon-file"></i>
-				<center><button type="submit" class="btn btn-outline-secondary" value="Mostrar vinhos">Mostrar vinhos<span class="glyphicons glyphicons-glass"></span></button></center>
+				<center><button type="submit" class="btn btn-outline-secondary seleciona" value="Mostrar vinhos">Mostrar vinhos <span><img src="<?php echo BASE_URL;?>assets/images/glass.png"></span></button></center>
 			</div>
 		</form>
 	</div>

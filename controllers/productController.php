@@ -37,6 +37,7 @@
 			$dados['filters'] = $filtros->getFilters($filters);	 	
 
 			if(isset($_SESSION['login'])){
+				$dados['foto'] = $usuario->getFoto($_SESSION['login']);
 				$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
 				$dados['list_id_users'] = $wines->getId_Users($id, $_SESSION['login']);
 			}
@@ -63,6 +64,25 @@
 				header("Location: ".BASE_URL);
 			}
 
+		}
+
+		public function edit($id){
+			$dados = array();
+
+			$wines = new Wines();
+			
+			$usuario = new Usuarios();
+
+			if(isset($_SESSION['login'])){
+				$dados['foto'] = $usuario->getFoto($_SESSION['login']);
+				$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+				$dados['list_id_users'] = $wines->getId_Users($id, $_SESSION['login']);
+			}
+
+			$dados['product_edit'] = $wines->getInfoWine($id);
+			$dados['consulta'] = $wines->getNomeWine();
+			$dados['id'] = $id;
+			$this->loadView('edicao_vinho', $dados);
 		}
 
 	}

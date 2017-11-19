@@ -41,7 +41,7 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_user/cadastraUsuario">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo BASE_URL; ?>cadastro_user/cadastraUsuario">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Entre para a comunidade!</h1>
 					
@@ -92,7 +92,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idConfirmar"></label>
 						<div class="col-md-8">
-							<input type="submit" class="btn btn-secondary" value="Confirmar">				   
+							<input type="submit" style="float:right" class="btn btn-outline-secondary seleciona" value="Confirmar">				   
 						</div>
 					</div>
 

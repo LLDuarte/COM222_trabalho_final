@@ -57,9 +57,10 @@
 
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-secondary">Entrar</button> </center>
+			<center><button type="submit" class="btn btn-outline-secondary seleciona">Entrar</button> </center>
 		</form>
 	</div>
+	<br><br><br>	
 	<center>
 		<div class="div-rodape">
 			© Copyright 2017 - Todos os direitos reservados <br>

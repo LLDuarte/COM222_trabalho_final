@@ -102,7 +102,7 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="idConfirmar"></label>
 						<div class="col-md-8">
-							<input type="submit" class="btn btn-secondary" value="Confirmar">				   
+							<input type="submit" style="float:right" class="btn btn-outline-secondary seleciona" value="Confirmar">				   
 						</div>
 					</div>
 

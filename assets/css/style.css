@@ -18,6 +18,40 @@
 	-webkit-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
 
 }
+.seleciona:hover {
+	box-shadow: 0 0 150px #430C0C inset;
+
+}
+.dropdown-item:hover{
+	box-shadow: 0 0 150px #430C0C inset;
+	color: white;
+	transition: .10s;
+}
+.foto_lado_nome img{
+	border-radius: 50%;
+	display: inline-block;	
+	overflow: hidden;	
+}
+
+h2{
+	color: #430C0C;
+}
+h5{
+	color: #430C0C;
+}
+h4{
+	color: #430C0C;
+}
+
+
+.opcao{
+	background: white;
+	color: black;
+}
+
+.opcao{
+	box-shadow: 0 0 150px #430C0C inset;
+}
 
 a {
 	font-weight: bold;
@@ -27,6 +61,7 @@ a {
 a:hover {
 	color: #430C0C;
 	transition: .8s;
+	text-decoration:none; 
 }
 
 /*
@@ -149,7 +184,7 @@ a:hover {
 
 .direita_vinhos{
 	background-color: #FFFFF0;
-	height: 900px;
+	height: 950px;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -158,6 +193,11 @@ a:hover {
 .direita_vinho{
 	padding-top: 10px;
 	height: 600px;	
+}
+
+.direita_info_user{
+	padding-top: 10px;
+	height: 700px;	
 }
 
 .informacoes_vinho{
@@ -174,7 +214,7 @@ a:hover {
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -260px;	
-	height: 100px;
+	height: 120px;
 }
 
 .write_review{
@@ -183,7 +223,7 @@ a:hover {
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -140px;	
-	height: 300px;
+	height: 320px;
 }
 
 .reviews{
@@ -192,10 +232,19 @@ a:hover {
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -260px;		
+
+}
+
+.reviews2{
+	background-color: #FFFFF0;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	margin-top: -420px;		
 }
 
 .text_review{
-width: 300px;
+	width: 300px;
 }
 
 .sobreposta{
@@ -210,6 +259,16 @@ width: 300px;
 	height: 130px;
 	overflow: hidden;
 	width: 130px;
+}
+
+.fotoUser2 img{
+	border-radius: 50%;
+	border: 5px solid #FFFFF0;
+	display: inline-block;
+	margin-top: 50px;
+	height: 250px;
+	overflow: hidden;
+	width: 250px;
 }
 
 .fotoRotulo{
@@ -312,23 +371,57 @@ h1 {
 }
 .product_name {
 	font-weight:bold;
-	color:#0000FF;
+	color:#430c0c;
 }
 .product_brand {
-	color:#000;
-	font-size:11px;
-}
-.product_price_from {
-	float:left;
-	color:#CCC;
+	color:#8b8589;
 	font-size:12px;
-	margin-top:15px;
+}
+
+.product_info_pais{
+	color:#8b8589;
+	font-size:20px;
+}
+.product_aval {
+	float:left;
+	color:#696969;
+	font-size:20px;
+	margin-top: -10px;
+}
+.label_review{
+	margin-top: 10px;
+	margin-left: 5px;
+}
+.label_aval{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.label_comment{
+	margin-top: 10px;
+}
+.data{
+	color:#696969;
+}
+.product_info_aval{
+	color:#696969;
+	font-size:18px;
+}
+.product_aval_label{
+	float:left;
+	color:#696969;
+	font-size:12px;
+}
+.product_info_price{
+	color:#696969;
+	font-weight: bold;
+	font-size: 17px;
 }
 .product_price {
 	float:right;
-	color:#000;
+	color:#696969;
 	font-weight: bold;
-	margin-top:15px;
+	font-size: 17px;
+	margin-top:20px;
 }
 
 .paginationItem{

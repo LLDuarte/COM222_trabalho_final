@@ -58,7 +58,8 @@ class my_winesController extends controller{
 				}
 				
 				$dados['usuario'] = $usuario->getNome($id);
-				$dados['foto'] = $usuario->getFoto($id);
+				$dados['foto'] = $usuario->getFoto($_SESSION['login']);
+				$dados['foto_perfil'] = $usuario->getFoto($id);
 				$dados['qtdAval'] = $wines->getQtdAval($id);
 				$dados['list_avaliacao_comments_user'] = $wines->getAvaliacao_Comments_user($id);
 				$this->loadTemplate('user', $dados);

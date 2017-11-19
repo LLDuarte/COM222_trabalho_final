@@ -95,6 +95,66 @@ class Wines extends model{
 		}
 	}
 
+	public function updateWines($nome, $tipoVinho, $tipoUva, $acompanhamento, $vinicola, 
+		$regiao, $pais, $estilo, $preco, $id_user, $id_tipoVinho, $id_vinho){
+
+		$query = "SELECT 
+		v.*, ti.nome				
+		FROM 
+		vinho AS v
+		INNER JOIN tipovinho AS ti ON ti.id = v.id_tipoVinho
+		WHERE ti.nome = :tipoVinho AND v.nome = :nome";
+
+		$sql = $this->db->prepare($query);
+		$sql->bindValue(":tipoVinho", $tipoVinho);
+		$sql->bindValue(":nome", $nome);
+		$sql->execute();
+		
+		//o tipo_vinho e o nome são unicos
+		//caso não tenha tipo_vinho e o nome cadastrados, ou seja, o vinho ainda nao existe
+		if($sql->rowCount() == 0) {
+
+			$consulta = "UPDATE vinho SET 
+			nome = :nome, 
+			tipo_uva = :tipoUva, 
+			pais = :pais, 
+			vinicola = :vinicola, 
+			preco = :preco, 			 
+			regiao = :regiao, 
+			comidas = :acompanhamento, 			 
+			estilo = :estilo			
+			WHERE  id_usuario = :id_usuario AND id = :id_vinho";
+
+			$consulta2 = "UPDATE tipovinho SET nome = :tipoVinho WHERE id = :id_tipoVinho";
+						
+			$sql = $this->db->prepare($consulta);			
+			$sql->bindValue(":nome", $nome);
+			$sql->bindValue(":tipoUva", $tipoUva);
+			$sql->bindValue(":pais", $pais);
+			$sql->bindValue(":vinicola", $vinicola); 
+			$sql->bindValue(":preco", $preco);
+			$sql->bindValue(":regiao", $regiao);
+			$sql->bindValue(":acompanhamento", $acompanhamento);
+			$sql->bindValue(":estilo", $estilo);
+			$sql->bindValue(":id_usuario", $id_user);
+			$sql->bindValue(":id_vinho", $id_vinho);
+
+			$sql2 = $this->db->prepare($consulta2);
+			$sql2->bindValue(":tipoVinho", $tipoVinho);
+			$sql2->bindValue(":id_tipoVinho", $id_tipoVinho);
+			
+					
+			$sql->execute();
+			$sql2->execute();
+			
+
+			header("Location: ".BASE_URL."product/open/".$id_vinho);
+
+		} else {
+			return "Este nome já está cadastrado.";
+		}
+	}
+
 	public function getNomeWine(){
 		$array = array();
 
@@ -119,7 +179,7 @@ class Wines extends model{
 		if($sql->rowCount() > 0) {
 
 			$array = $sql->fetchAll();
-				
+
 		}		
 		
 		return json_encode($array);		
@@ -142,6 +202,30 @@ class Wines extends model{
 			$array = $sql->fetch();
 
 			return $array['id'] + 1.0;
+
+		}else{
+			return '';
+		}
+	}
+
+	public function getIDTipoVinho_Edita($id){
+		$sql = "SELECT 
+		id_tipoVinho 
+		FROM 
+		vinho
+		WHERE 
+		id = :id";
+
+		$sql = $this->db->prepare($sql);
+		
+		$sql->bindValue(":id", $id);
+		
+		$sql->execute();
+		
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetch();
+
+			return $array;
 
 		}else{
 			return '';
@@ -648,7 +732,13 @@ class Wines extends model{
 		$array = array();
 
 
-		$consulta = "SELECT * FROM vinho WHERE id_usuario = :id LIMIT $inicio, $limit";
+		$consulta = "SELECT 
+		* ,
+		(select round(avg(avaliacao.avaliacao),2) from avaliacao where avaliacao.id_vinho = vinho.id) as avaliacao
+		FROM 
+		vinho 
+		WHERE id_usuario = :id 
+		LIMIT $inicio, $limit";
 
 		//echo $consulta; exit;
 		$sql = $this->db->prepare($consulta);

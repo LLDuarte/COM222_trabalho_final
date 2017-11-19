@@ -5,6 +5,7 @@ class edicao_userController extends controller {
 		//renderiza a pagina de cadastro de usuários
 		$usuario = new Usuarios();
 		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+		$dados['foto'] = $usuario->getFoto($_SESSION['login']);
 		$dados['list'] = $usuario->getDados($_SESSION['login']);		
 
 		$this->loadView('edicao_user', $dados);		

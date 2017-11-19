@@ -66,7 +66,7 @@
 
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-secondary">Entrar</button></center>
+			<center><button type="submit" class="btn btn-outline-secondary seleciona">Entrar</button></center>
 		</form>
 	</div>
 	<center>

@@ -30,7 +30,8 @@ class homeController extends controller{
 		}
 
 		if (isset($_SESSION['login'])) {
-			$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);	
+			$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+			$dados['foto'] = $usuario->getFoto($_SESSION['login']);	
 		}
 			
 		$dados['filters'] = $filtros->getFilters($filters);

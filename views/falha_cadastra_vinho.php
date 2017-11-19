@@ -80,10 +80,17 @@
 		<div class="row">
 			<div class="col">
 				<!-- ********************* DEFINIR O MÉTODO DE ACESSO DO PHP ******************************** -->
-				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="cadastro_vinho/insereVinho">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo BASE_URL; ?>cadastro_vinho/insereVinho">
 					<!-- Form Name -->
 					<h1 class="welcome text-center">Cadastre um novo vinho!</h1>
-					
+					<?php if(!empty($erro)): ?>
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<?php echo $erro; ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					<?php endif; ?>
 					<div class="form-group">
 						<label for="inputNome">Nome</label>
 						<input type="text" name="nome" class="form-control" id="nome_vinho" placeholder="Nome do vinho..." required>
@@ -142,26 +149,26 @@
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">Vinícola</label>
-							<input type="text" name="vinicola" class="form-control" id="inputEmail4" placeholder="Vinicola..." required>
+							<input type="text" name="vinicola" class="form-control" id="inputEmail4" placeholder="Vinicola..." required value="<?php echo $vinicola;?>">
 						</div>
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">Região</label>
-							<input type="text" name="regiao" class="form-control" id="inputEmail4" placeholder="Sardenha..." required>
+							<input type="text" name="regiao" class="form-control" id="inputEmail4" placeholder="Sardenha..." required value="<?php echo $regiao;?>">
 						</div>
 						<div class="form-group col-md-4">
 							<label for="inputVinicola">País</label>
-							<input type="text" name="pais" class="form-control" id="inputEmail4" placeholder="Itália, Brasil..." required>
+							<input type="text" name="pais" class="form-control" id="inputEmail4" placeholder="Itália, Brasil..." required value="<?php echo $pais;?>">
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="inputVinicola">Estilo do Vinho</label>
-							<input type="text" name="estilo" class="form-control" id="inputEmail4" placeholder="Estilo..." required>
+							<input type="text" name="estilo" class="form-control" id="inputEmail4" placeholder="Estilo..." required value="<?php echo $estilo;?>">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputVinicola">Preço</label>
-							<input type="text" name="preco" class="form-control" id="inputEmail4" placeholder="Apenas números..." required>
+							<input type="text" name="preco" class="form-control" id="inputEmail4" placeholder="Apenas números..." required value="<?php echo $preco;?>">
 						</div>
 					</div>
 

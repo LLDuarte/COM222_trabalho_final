@@ -29,7 +29,7 @@ class winesController extends controller{
 			$filters = $_GET['filter'];
 		}
 
-			
+		
 		$inicio = ($paginaAtual * $limit) - $limit;
 
 		$dados['list'] = $wines->getList($inicio,$limit, $filters);
@@ -41,8 +41,10 @@ class winesController extends controller{
 
 		$dados['filters_selected'] = $filters;
 		//print_r($dados['filters_selected']); exit;
-		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
-
+		if(isset($_SESSION['login'])){
+			$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+			$dados['foto'] = $usuario->getFoto($_SESSION['login']);
+		}
 		$this->loadTemplate('wines', $dados);
 	}
 
