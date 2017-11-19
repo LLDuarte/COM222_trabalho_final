@@ -32,12 +32,13 @@
 			
 
 			$dados['list_avaliacao_comments'] = $wines->getAvaliacao_Comments($id);
-			$dados['list_id_users'] = $wines->getId_Users($id, $_SESSION['login']);
+			
 			//print_r($dados['list_avaliacao_comments']); exit;
 			$dados['filters'] = $filtros->getFilters($filters);	 	
 
 			if(isset($_SESSION['login'])){
 				$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+				$dados['list_id_users'] = $wines->getId_Users($id, $_SESSION['login']);
 			}
 
 			$info = $wines->getInfoWine($id);

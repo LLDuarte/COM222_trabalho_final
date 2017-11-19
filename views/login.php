@@ -39,7 +39,7 @@
 	</nav>
 
 
-	<div class="container div-cadastro">
+	<div class="container div-login">
 		<h1>Login</h1>
 
 		<form method="POST" action="login/entrar">

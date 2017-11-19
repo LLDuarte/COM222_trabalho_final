@@ -47,7 +47,12 @@
 					<h1 class="welcome text-center">Entre para a comunidade!</h1>
 					
 					<?php if(!empty($erro)): ?>
-						<div class="alert alert-danger"><?php echo $erro; ?></div>
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<?php echo $erro; ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 					<?php endif; ?>
 					
 					<!-- Text input-->

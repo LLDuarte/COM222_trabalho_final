@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<aside>
-					<h1>Escolha</h1>
+					<center><div class="filterEscolha"><h1 style="font-weight:bold;">Escolha</h1></div></center>
 					<div class="filterarea">
 
 						<form method="GET">
@@ -30,15 +30,16 @@
 									<input type="hidden" id="slider1" name="filter[slider1]" value="<?php echo $viewData['filters']['slider1'] ?>">
 									<input type="text" id="amount" readonly style="border:0; color:darkgray; font-weight:bold;">
 
-									<div id="slider-range" style="background-color: #430C0C;"></div>
+									<div id="slider-range"></div>
 								</div>
 							</div>
 
 							<div class="filterbox">
-								<div class="filtertitle">Intervalo de avaliações</div>
+								<div class="filtertitle">Avaliação</div>
 								<div class="filtercontent">
 									<input type="hidden" id="slider3" name="filter[slider3]" value="<?php echo  $viewData['filters']['slider3']?>">
-									<input type="text" id="estrela" readonly style="border:0; color:darkgray; font-weight:bold;">	<div id="slider-range-max" style="background-color: #430C0C; "></div>
+									<input type="text" id="estrela" readonly style="border:0; color:darkgray; font-weight:bold;">	
+									<div id="slider-range-max"></div>
 								</div>
 							</div>
 
@@ -95,12 +96,7 @@
 							</div>
 						</div>
 					</form>
-					<div class="widget">
-						<h1>ds</h1>
-						<div class="widget_body">
-							...
-						</div>
-					</div>
+					
 				</aside>
 			</div>
 			<div class="col-sm-9">

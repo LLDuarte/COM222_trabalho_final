@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.structure.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>assets/css/jquery-ui.theme.min.css">
 
+
 </head>
 </head>
 <body>
@@ -66,11 +67,13 @@
 
 	<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 	
-	<center>
+
+	<center>			
 		<div class="div-rodape">
 			© Copyright 2017 - Todos os direitos reservados <br>
 			Edson Valdir | Leandro Duarte | Victor Rodrigues
 		</div>
+
 	</center>	
 	
 	<!-- JS -->
@@ -84,5 +87,6 @@
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/script.js"></script>
+
 </body>
 </html>

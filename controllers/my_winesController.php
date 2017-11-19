@@ -53,7 +53,10 @@ class my_winesController extends controller{
 					'usuario_nome' => '',
 					'foto' => ''
 				);
-				$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+				if (isset($_SESSION['login'])) {
+					$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);
+				}
+				
 				$dados['usuario'] = $usuario->getNome($id);
 				$dados['foto'] = $usuario->getFoto($id);
 				$dados['qtdAval'] = $wines->getQtdAval($id);

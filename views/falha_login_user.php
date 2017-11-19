@@ -38,12 +38,18 @@
 	</nav>
 
 
-	<div class="container">
+	<div class="container div-login">
 		<h1>Login</h1>
 
 		<?php if(!empty($erro)): ?>
-			<div class="alert alert-danger"><?php echo $erro; ?></div>
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<?php echo $erro; ?>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 		<?php endif; ?>
+
 
 		<form method="POST">
 			<div class="form-group">
@@ -60,7 +66,7 @@
 
 				</div>
 			</div>
-			<button type="submit" class="btn btn-secondary">Entrar</button>
+			<center><button type="submit" class="btn btn-secondary">Entrar</button></center>
 		</form>
 	</div>
 	<center>

@@ -12,8 +12,11 @@
 .espacamento-interno-menu {
 	padding: 10px;
 	padding-right: 50px;
-	margin: none;	
-	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+	margin: none;		
+	box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+
 }
 
 a {
@@ -54,6 +57,10 @@ a:hover {
 	margin-top: 400px;
 	margin-left: 110px;
 	position: absolute;
+	box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 90px rgba(0, 0, 0, 0.1) inset, 0 0 90px rgba(0, 0, 0, 0.1) inset, 0 0 90px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+
 
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px;
@@ -83,6 +90,17 @@ a:hover {
 	white-space: normal;
 	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
 }
+
+.div-login {
+	margin-top: 150px;
+	margin-bottom: 70px;
+	padding: 20px 70px 20px 70px;
+	color: gray;
+	width: 40%;
+	white-space: normal;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+}
+
 
 .fundo-botao {
 	background-color: #430C0C;
@@ -231,6 +249,12 @@ section .container {
 	padding:0;
 }
 
+.filterEscolha{
+	border: 2px solid #ececec;
+	border-radius: 10px;
+	padding:10px;
+}
+
 .filterarea {
 	border: 2px solid #ececec;
 	border-radius: 10px;
@@ -362,11 +386,21 @@ h1 {
 	font-size: 12px;
 	color: darkgray;
 	padding: 10px 0px 10px 0px;
+	box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow:0 10px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset, 0 0 15px rgba(0, 0, 0, 0.1) inset;
+
+
 }
 
 .div-rodape:hover {
 	color: black;
 	transition: .8s;
+
+}
+
+.sombra-rodape{
+
 }
 
 

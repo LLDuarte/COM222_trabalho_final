@@ -29,7 +29,10 @@ class homeController extends controller{
 			$filters = $_GET['filter'];
 		}
 
-		$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);		
+		if (isset($_SESSION['login'])) {
+			$dados['usuario_nome'] = $usuario->getNome($_SESSION['login']);	
+		}
+			
 		$dados['filters'] = $filtros->getFilters($filters);
 		
 		$this->loadTemplate('home', $dados);

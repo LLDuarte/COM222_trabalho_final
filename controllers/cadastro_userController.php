@@ -18,6 +18,7 @@ class cadastro_userController extends controller{
 				$sobrenome = addslashes($_POST['sobrenome']);
 				$email = addslashes($_POST['email']); //proteção
 				$senha = addslashes($_POST['senha']);
+				
 				$foto = array();
 
 				if(isset($_FILES['foto']) && !empty($_FILES['foto']['tmp_name'])){
@@ -26,7 +27,9 @@ class cadastro_userController extends controller{
 
 				$usuario = new Usuarios();
 				$dados['erro'] = $usuario->cadastra_usuario($nome, $sobrenome, $email, $senha, $foto);
-				
+				$dados['nome'] = $nome;
+				$dados['sobrenome'] = $sobrenome;
+				$dados['senha'] = $senha;			
 
 			}
 
