@@ -19,8 +19,8 @@
 							</div>							
 						</div>
 						<br>
-						<div class="row justify-content-center">
-							<h1><?php echo $usuario_nome;?></h1>
+						<div class="row justify-content-center ">
+							<h1 class="nome_user"><?php echo $usuario_nome;?></h1>
 						</div>
 						<div class="row justify-content-center">
 							
@@ -37,12 +37,7 @@
 								<li class="nav-item">
 									<a class="nav-link" href="cadastro_vinho">Cadastrar Vinho</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="cadastroVinho">Top 30 Avaliações</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="cadastroVinho">Últimas Avaliações</a>
-								</li>								
+												
 							</ul>
 						</div>
 						<br>

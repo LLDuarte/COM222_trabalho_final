@@ -166,7 +166,10 @@ a:hover {
 	margin-bottom: 12%;
 	overflow:hidden;
 }
-
+.nome_user{
+	border-bottom: 2px solid #430C0C;
+	border-top: 2px solid #430C0C;
+}
 .botao{
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -212,7 +215,7 @@ a:hover {
 	background-color: #FFFFF0;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 20px rgba(0, 0, 0, 0.3) inset, 1px 0 40px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -260px;	
 	height: 120px;
 }
@@ -221,7 +224,7 @@ a:hover {
 	background-color: #FFFFF0;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:-10px 5px 60px rgba(0, 0, 0, 0.3) inset, 5px 0 60px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -140px;	
 	height: 320px;
 }
@@ -230,7 +233,7 @@ a:hover {
 	background-color: #FFFFF0;
 	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow:0 1px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:-10px 16px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	margin-top: -260px;		
 
 }
